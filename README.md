@@ -65,3 +65,4 @@ Developers should run these often!
 
 Source code distributed under the MIT license. Text and other assets copyright
 General Assembly, Inc., all rights reserved.
+# close-pin-client
