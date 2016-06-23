@@ -1,7 +1,6 @@
 'use strict';
 
 const app = require('../app.js');
-const bookApi = require('../books/book-api.js');
 
 const success = (data) => {
   if (data) {
@@ -15,12 +14,15 @@ const failure = (error) => {
   console.error(error);
 };
 
+const signUpSuccess = function(data){
+  console.log(data);
+  console.log('sign up success');
+}
+
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app.user);
-  bookApi.getBooks();
-  $('.book-buttons').addClass('show');
-  $('.book-buttons').removeClass('hide');
+  console.log('sign in success')
 };
 
 const signOutSuccess = () => {
@@ -35,6 +37,7 @@ const signOutSuccess = () => {
 module.exports = {
   success,
   failure,
+  signUpSuccess,
   signInSuccess,
   signOutSuccess
 };
