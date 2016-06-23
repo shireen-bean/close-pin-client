@@ -7,7 +7,57 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+
+      <header>
+        <h1>Close Pin</h1>
+        <button>sign in</button>
+        <button>sign up</button>
+          </header>
+      <nav>
+        <li><button>Browse</button></li>
+        <li><button>Week</button></li>
+        <li><button>Pins</button></li>
+        <li><button>Media</button></li>
+      </nav>
+
+      <article>
+  <form id="sign-up">
+    <fieldset>
+      <legend>Sign up!</legend>
+      <input type="text" name="credentials[email]" placeholder="Email">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+      <input type="submit" name="submit" value="Sign up!">
+    </fieldset>
+  </form>
+
+  <form id="sign-in">
+    <fieldset>
+      <legend>Sign In!</legend>
+      <input type="text" name="credentials[email]" placeholder="Email">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <input type="submit" name="submit" value="Sign In">
+    </fieldset>
+  </form>
+
+  <form id="sign-out">
+    <fieldset>
+      <legend>Sign Out!</legend>
+      <input class="sign-out" type="submit" value="Sign Out">
+    </fieldset>
+  </form>
+
+  <form id="change-password">
+    <fieldset>
+      <legend>Change Password!</legend>
+      <input type="password" name="passwords[old]" placeholder="Current Password">
+      <input type="password" name="passwords[new]" placeholder="New Password">
+      <input type="submit" name="submit" value="Change Password">
+    </fieldset>
+  </form>
+</article>
+
+      <h2>Example</h2>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
