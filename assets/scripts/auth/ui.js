@@ -23,6 +23,7 @@ const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app.user);
   console.log('sign in success')
+  $('.current-user').val(data.user.id)
 };
 
 const signOutSuccess = () => {
