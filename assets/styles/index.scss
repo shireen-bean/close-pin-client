@@ -1,2 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+@import 'fonts';
+@import 'colors';
+@import 'typography';
+@import 'theme';
+
+//MUST BE LAST
+// @import "breakpoints";

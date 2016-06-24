@@ -1,0 +1,18 @@
+$background_color: #E0E0E0;
+$plain-black: #000000;
+$plain-white: #FFFFFF;
+
+body{
+  background-color: $background_color;
+}
+
+nav {
+& li button{
+  background-color: transparentize($plain-black, 1);
+  text-shadow: none !important;
+  border:none !important;
+  box-shadow:none !important;
+  background-color: $plain-black;
+  color: $plain-white;
+  }
+}

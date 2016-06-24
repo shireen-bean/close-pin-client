@@ -10,8 +10,7 @@
 
       <header>
         <h1>Close Pin</h1>
-
-          </header>
+      </header>
       <nav>
         <li><button>Browse</button></li>
         <li><button>Week</button></li>
@@ -65,6 +64,20 @@
       <input type="text" name="profile[picture]" placeholder="Url to pic">
       <input class="current-user" type="text" name="profile[user_id]" placeholder="Current User">
       <input type="submit" name="submit" value="Create!">
+      <button id="update-profile">Update Profile</button>
+    </fieldset>
+  </form>
+
+  <form id="update-profile">
+    <fieldset>
+      <legend>Create Profile</legend>
+      <input type="text" name="profile[given_name]" placeholder="First Name">
+      <input type="text" name="profile[surname]" placeholder="Last Name">
+      <input type="text" name="profile[gender]" placeholder="Gender">
+      <input type="text" name="profile[description]" placeholder="Tagline">
+      <input type="text" name="profile[picture]" placeholder="Url to pic">
+      <input class="current-user" type="text" name="profile[user_id]" placeholder="Current User">
+      <input type="submit" name="submit" value="Create!">
     </fieldset>
   </form>
 
@@ -82,7 +95,7 @@
       <input type="text" name="shirt[sleeves]" placeholder="sleeves">
       <input type="text" name="shirt[tags]" placeholder="tags">
       <input type="text" name="shirt[image]" placeholder="url to image">
-      <input class="current-user" type="text" name="shirt[profile_id]" placeholder="Current User">
+      <input class="current-profile" type="text" name="shirt[profile_id]" placeholder="Current User">
       <input type="submit" name="submit" value="Create!">
     </fieldset>
   </form>

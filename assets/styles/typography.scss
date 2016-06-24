@@ -1,0 +1,9 @@
+h1{
+  text-align: center;
+}
+
+nav{
+& li{
+  display: inline-block;
+}
+}

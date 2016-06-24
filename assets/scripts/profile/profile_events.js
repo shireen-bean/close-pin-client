@@ -14,11 +14,20 @@ const onCreateProfile = function(event) {
   .fail(profileUi.failure);
 };
 
+const onUpdateProfile = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  profileApi.updateProfile(data)
+  .done(profileUi.updateProfileSuccess)
+  .fail(profileUi.failure);
+}
+
 
 
 
 const addHandlers = () => {
   $('#create-profile').on('submit', onCreateProfile);
+  $('#update-profile').on('submit', onUpdateProfile);
 };
 //
 module.exports = {

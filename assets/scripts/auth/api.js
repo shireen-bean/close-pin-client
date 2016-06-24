@@ -18,6 +18,13 @@ const signIn = (data) => {
   });
 };
 
+const getCurrentProfile = function(user_id){
+  return $.ajax({
+    url: app.host + '/users/'+user_id,
+    method: "GET"
+  });
+  };
+
 const signOut = () => {
   return $.ajax({
     url: app.host + '/sign-out/' + app.user.id,
@@ -44,4 +51,5 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
+  getCurrentProfile,
 };

@@ -11,6 +11,7 @@ const clothingEvents = require('./clothing/clothing_events.js');
 require('./example');
 
 $(() => {
+  $('head').append('<link rel="stylesheet" href="./assets/styles/style.css">');
   authEvents.addHandlers();
   profileEvents.addHandlers();
   clothingEvents.addHandlers();

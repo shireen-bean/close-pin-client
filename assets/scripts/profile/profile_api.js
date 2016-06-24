@@ -11,7 +11,16 @@ const createProfile = (data) => {
   });
 };
 
-
+const updateProfile = function(data){
+  return $.ajax({
+    url: app.host + '/profiles/' + '1',
+    method: "POST",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
 
 
 
