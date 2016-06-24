@@ -9,13 +9,10 @@ const onCreateProfile = function(event) {
   event.preventDefault();
   console.log(event.target)
   let data = getFormFields(event.target);
-  console.log('data before api'+data)
   profileApi.createProfile(data)
   .done(profileUi.createProfileSuccess)
   .fail(profileUi.failure);
 };
-
-
 
 
 
