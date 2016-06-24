@@ -2,14 +2,16 @@
 <html>
     <head>
       <title>Example</title>
-
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body class="container-fluid">
 
       <header>
-        <h1>Close Pin</h1>
+        <li><button id="sign-up-button">Sign Up</button></li>
+        <li><button id="sign-in-button">Sign In</button></li>
+        <h1>Clothes Pin</h1>
       </header>
       <nav>
         <li><button>Browse</button></li>
@@ -19,7 +21,7 @@
       </nav>
 
       <article>
-  <form id="sign-up">
+  <!-- <form id="sign-up">
     <fieldset>
       <legend>Sign up!</legend>
       <input type="text" name="credentials[email]" placeholder="Email">
@@ -27,15 +29,8 @@
       <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
       <input type="submit" name="submit" value="Sign up!">
     </fieldset>
-  </form>
-  <form id="sign-in">
-    <fieldset>
-      <legend>Sign In!</legend>
-      <input type="text" name="credentials[email]" placeholder="Email">
-      <input type="password" name="credentials[password]" placeholder="Password">
-      <input type="submit" name="submit" value="Sign In">
-    </fieldset>
-  </form>
+  </form> -->
+
   <form id="sign-out">
     <fieldset>
       <legend>Sign Out!</legend>
@@ -102,14 +97,65 @@
 
 </section>
 
-      <h2>Example</h2>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+
+<div id="sign-in-modal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                      <h4 class="modal-title">SUSHI TIC TAC TOE</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="sign-in">
+                      <fieldset>
+                        <legend>Sign In!</legend>
+                        <input type="text" name="credentials[email]" placeholder="Email">
+                        <input type="password" name="credentials[password]" placeholder="Password">
+                        <input type="submit" name="submit" value="Sign In">
+                      </fieldset>
+                    </form>
+                  </div>
+                  <!-- /.modal-body -->
+              </div>
+              <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div id="sign-up-modal" class="modal fade" tabindex="-1" role="dialog">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                       <h4 class="modal-title">Clothes Pin</h4>
+                   </div>
+                   <div class="modal-body">
+                     <form id="sign-up">
+                       <fieldset>
+                         <legend>Sign up!</legend>
+                         <input type="text" name="credentials[email]" placeholder="Email">
+                         <input type="password" name="credentials[password]" placeholder="Password">
+                         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                         <input type="submit" name="submit" value="Sign up!">
+                       </fieldset>
+                     </form>
+                   </div>
+                   <!-- /.modal-body -->
+               </div>
+               <!-- /.modal-content -->
+           </div>
+           <!-- /.modal-dialog -->
+       </div>
+       <!-- /.modal -->
+
+
+
+<input class="secondary-button" type="button" id="toggle-sign-up" value="Sign Up">
+
+
+
+
     </body>
 </html>

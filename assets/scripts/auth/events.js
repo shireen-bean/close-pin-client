@@ -37,12 +37,30 @@ const onChangePassword = (event) => {
   .fail(ui.failure);
 };
 
+const onToggleSignUp = function(event){
+  event.preventDefault();
+  $('#sign-in-modal').modal('hide');
+  $('#sign-up-modal').modal('show');
+};
+
+const onToggleSignIn = function(event){
+  event.preventDefault();
+  $('#sign-up-modal').modal('hide');
+  $('#sign-in-modal').modal('show');
+};
+
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('click', onSignOut);
   $('#change-password').on('submit', onChangePassword);
+
+  $('#sign-in-button').on('click', function(){$('#sign-in-modal').modal('show');});
+  $('#sign-up-button').on('click', function(){$('#sign-up-modal').modal('show');});
+  $('#change-password-button').on('click', function(){$('#change-password-modal').modal('show');});
+  $('#toggle-sign-up').on('click',onToggleSignUp);
+  $('#toggle-sign-in').on('click',onToggleSignIn);
 };
 //
 module.exports = {

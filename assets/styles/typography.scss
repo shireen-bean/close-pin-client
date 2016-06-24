@@ -1,3 +1,12 @@
+header{
+  & li {
+    display: inline-block;
+    & button {
+      
+    }
+  }
+}
+
 h1{
   text-align: center;
 }
@@ -5,5 +14,8 @@ h1{
 nav{
 & li{
   display: inline-block;
+  & button {
+    width: 400px;
+  }
 }
 }
