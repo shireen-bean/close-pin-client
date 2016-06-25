@@ -22,10 +22,13 @@ const failure = (error) => {
   console.error(error);
 };
 
-const signUpSuccess = function(data){
-  console.log(data);
-  console.log('sign up success');
-}
+const onSignIn = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signIn(data)
+  .done(ui.signInSuccess)
+  .fail(ui.failure);
+};
 
 const signInSuccess = (data) => {
   app.user = data.user;
@@ -35,6 +38,26 @@ const signInSuccess = (data) => {
   .done(setCurrentProfile)
   .fail(failure);
 };
+
+const signInRequest = function(email,pass) {
+  return $.ajax({
+    url: app.host + '/sign-in',
+    method: "POST",
+    data: {"credentials[email]":email, "credentials[password]":pass},
+  });
+};
+
+const signUpSuccess = function(data){
+  console.log(data);
+  console.log('sign up success');
+  let email = $('#sign-up-email').val();
+  let pass = $('#sign-up-pass').val()
+  signInRequest(email,pass)
+  // $('#sign-in-email').val(email)
+  // $('#sign-in-pass').val(pass)
+  .done(signInSuccess)
+  .fail(failure)
+}
 
 const signOutSuccess = () => {
   console.log('User signed out successfully');

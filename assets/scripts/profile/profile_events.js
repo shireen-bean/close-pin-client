@@ -28,6 +28,8 @@ const onUpdateProfile = function(event) {
 const addHandlers = () => {
   $('#create-profile').on('submit', onCreateProfile);
   $('#update-profile').on('submit', onUpdateProfile);
+
+  $('#edit-profile-button').on('click', function(){$('#edit-profile-modal').modal('show');});
 };
 //
 module.exports = {
