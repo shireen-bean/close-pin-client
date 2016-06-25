@@ -1,21 +1,23 @@
-header{
-  & li {
-    display: inline-block;
-    & button {
-      
-    }
-  }
-}
 
 h1{
   text-align: center;
 }
 
-nav{
-& li{
-  display: inline-block;
-  & button {
-    width: 400px;
+nav {
+& button{
+  height: 16vw;
   }
 }
+
+#content {
+  height: 1000px;
+}
+
+#welcome-page {
+  height: 100%;
+  width: 100%;
+  & .head-image img{
+    width: 20%;
+    margin-left: 40%;
+  }
 }

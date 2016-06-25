@@ -61,6 +61,7 @@ const addHandlers = () => {
   $('#change-password-button').on('click', function(){$('#change-password-modal').modal('show');});
   $('#toggle-sign-up').on('click',onToggleSignUp);
   $('#toggle-sign-in').on('click',onToggleSignIn);
+  $('#change-password-button').on('click', function(){$('#change-password-modal').modal('show');});
 };
 //
 module.exports = {

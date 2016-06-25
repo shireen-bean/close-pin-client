@@ -1,18 +1,40 @@
-$background_color: #E0E0E0;
+$button-color: #E0E0E0;
 $plain-black: #000000;
 $plain-white: #FFFFFF;
+$blue-grey: #555566;
+$background-color: #FFFFFF;
+
+
+@function tint($color, $percentage) {
+  @return mix($plain-white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix($plain-black, $color, $percentage);
+}
+
+
+
 
 body{
-  background-color: $background_color;
+  background-color: $background-color;
 }
 
 nav {
-& li button{
+& button{
   background-color: transparentize($plain-black, 1);
   text-shadow: none !important;
-  border:none !important;
+  border:3px solid $background-color !important;
   box-shadow:none !important;
-  background-color: $plain-black;
-  color: $plain-white;
+  background-color: $button-color;
+  color:$blue-grey;
   }
+}
+
+#welcome-page {
+  background-image: url('https://static.pexels.com/photos/6805/fashion-men-vintage-colorful-large.jpg');
+  opacity: 0.6;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid green;
 }
