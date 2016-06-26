@@ -54,9 +54,26 @@
     <div>
     <button id='sign-up-button'>Sign Up</button>
     <button id='sign-in-button'>Sign In</button>
-  </div>
+    </div>
   </div>
 
+  <div id='browse-all'>
+      <div id='side-tabs'>
+        <ul>
+          <li><button id='tops-all'>Tops</button></li>
+          <li><button id='bottoms-all'>Bottoms</button></li>
+          <li><button id='shoes-all'>Shoes</button></li>
+          <li><button id='accessories-all'>Accessories</button></li>
+          <li><button id='add-new'>Add New</button></li>
+        </ul>
+      </div>
+      <div id='show-all'>
+        <p>insert clothes here</p>
+      </div>
+      <div id='build-outfit'>
+        <p>insert clothes here</p>
+      </div>
+  </div>
 
 
 </section>
@@ -106,7 +123,7 @@
       <input type='text' name='shirt[top_name]' placeholder='Name'>
       <input type='text' name='shirt[brand]' placeholder='Brand'>
       <input type='text' name='shirt[color]' placeholder='Color'>
-      <!-- <input type='text' name='shirt[business]' placeholder='Business?'> -->
+      <input type='text' name='shirt[business]' placeholder='Business?'>
       <input type='text' name='shirt[pattern]' placeholder='pattern'>
       <input type='text' name='shirt[sleeves]' placeholder='sleeves'>
       <input type='text' name='shirt[tags]' placeholder='tags'>
@@ -236,6 +253,62 @@
      </div>
      <!-- /.modal -->
 
+     <div id='add-new-modal' class='modal fade' tabindex='-1' role='dialog'>
+          <div class='modal-dialog'>
+              <div class='modal-content'>
+                  <div class='modal-header'>
+                      <!-- <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button> -->
+                      <h4 class='modal-title'>Add To CLoset</h4>
+                  </div>
+                  <div class='modal-body'>
+                    <form id='create-new'>
+                      <fieldset>
+                        <legend>Sign up!</legend>
+                        <button id='add-top-option'>New Top</button>
+                        <button id='add-bottom-option'>New Bottom</button>
+                        <button id='add-shoes-option'>New Shoes</button>
+                        <button id='add-accessories-option'>New Accessory</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <!-- /.modal-body -->
+              </div>
+              <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div id="create-top-modal" class="modal fade" tabindex="-1" role="dialog">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title">Create Top</h4>
+                 </div>
+                 <div class="modal-body">
+                   <form id='new-shirt'>
+                     <fieldset>
+                       <legend>Add Shirt</legend>
+                       <input type='text' name='shirt[top_name]' placeholder='Name'>
+                       <input type='text' name='shirt[brand]' placeholder='Brand'>
+                       <input type='text' name='shirt[color]' placeholder='Color'>
+                       <input type='text' name='shirt[business]' placeholder='Business?'>
+                       <input type='text' name='shirt[pattern]' placeholder='pattern'>
+                       <input type='text' name='shirt[sleeves]' placeholder='sleeves'>
+                       <input type='text' name='shirt[tags]' placeholder='tags'>
+                       <input type='text' name='shirt[image]' placeholder='url to image'>
+                       <input class='current-profile' type='text' name='shirt[profile_id]' placeholder='Current User'>
+                       <input type='submit' name='submit' value='Create!'>
+                     </fieldset>
+                 </div>
+                 <!-- /.modal-body -->
+             </div>
+             <!-- /.modal-content -->
+         </div>
+         <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
 
 

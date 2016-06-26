@@ -38,3 +38,16 @@ nav {
   background-size: cover;
   border: 2px solid green;
 }
+
+#side-tabs {
+    & ul li {
+      & button {
+        background-color: transparentize($plain-black, 1);
+        text-shadow: none !important;
+        border:3px solid $plain-black !important;
+        box-shadow:none !important;
+        background-color: $plain-black;
+        color:$plain-white;
+      }
+    }
+  }

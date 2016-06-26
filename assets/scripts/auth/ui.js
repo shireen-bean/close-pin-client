@@ -22,22 +22,26 @@ const failure = (error) => {
   console.error(error);
 };
 
-const onSignIn = function(event) {
-  event.preventDefault();
-  let data = getFormFields(event.target);
-  api.signIn(data)
-  .done(ui.signInSuccess)
-  .fail(ui.failure);
-};
-
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app.user);
   console.log('sign in success')
+  $('nav').show();
   api.getCurrentProfile(data.user.id)
   .done(setCurrentProfile)
   .fail(failure);
 };
+
+const signInSuccessAfterSignUp = function(data) {
+  app.user = data.user;
+  console.log(app.user);
+  console.log('sign in success after sign up')
+  console.log(app.user)
+  console.log(data)
+  profileApi.createProfile(data)
+  .done(success)
+  .fail(failure);
+}
 
 const signInRequest = function(email,pass) {
   return $.ajax({
@@ -53,10 +57,11 @@ const signUpSuccess = function(data){
   let email = $('#sign-up-email').val();
   let pass = $('#sign-up-pass').val()
   signInRequest(email,pass)
-  // $('#sign-in-email').val(email)
-  // $('#sign-in-pass').val(pass)
-  .done(signInSuccess)
-  .fail(failure)
+  .done(signInSuccessAfterSignUp)
+  .fail(failure);
+
+  // .done(signInSuccess)
+  // .fail(failure)
 }
 
 const signOutSuccess = () => {

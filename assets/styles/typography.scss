@@ -10,7 +10,7 @@ nav {
 }
 
 #content {
-  height: 1000px;
+  height: 800px;
 }
 
 #welcome-page {
@@ -21,3 +21,25 @@ nav {
     margin-left: 40%;
   }
 }
+
+
+#side-tabs {
+    & ul li {
+      & button {
+        width: 8em;
+        height: 3em;
+        text-align: left;
+        margin-bottom: 2em;
+      }
+    }
+  }
+
+  #show-all{
+    width: 30%;
+    border: 2px solid green;
+  }
+
+  #build-outfit {
+    width: 20%;
+    border: 2px solid red;
+  }

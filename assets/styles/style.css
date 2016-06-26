@@ -4,3 +4,7 @@
      -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
      box-sizing: border-box; /* IE */
 }
+
+#side-tabs ul {
+  list-style-type: none;
+}

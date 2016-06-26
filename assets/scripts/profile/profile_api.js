@@ -7,14 +7,14 @@ const createProfile = (data) => {
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: data,
+    data: {"user_id": data.user.id},
   });
 };
 
 const updateProfile = function(data){
   return $.ajax({
-    url: app.host + '/profiles/' + '1',
-    method: "POST",
+    url: app.host + '/profiles/' + data.profile.id,
+    method: "PATCH",
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },

@@ -8,6 +8,7 @@
 const authEvents = require('./auth/events.js');
 const profileEvents = require('./profile/profile_events.js');
 const clothingEvents = require('./clothing/clothing_events.js');
+const interactEvents = require('./interact/interact_events.js');
 require('./example');
 
 $(() => {
@@ -15,4 +16,5 @@ $(() => {
   authEvents.addHandlers();
   profileEvents.addHandlers();
   clothingEvents.addHandlers();
+  interactEvents.addHandlers();
 });
