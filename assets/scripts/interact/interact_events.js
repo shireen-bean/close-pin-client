@@ -1,11 +1,13 @@
-const getFormFields = require('../../../lib/get-form-fields');
+'use strict';
 
-const api = require('./interact_api');
-const ui = require('./interact_ui');
+// const getFormFields = require('../../../lib/get-form-fields');
+
+// const interactApi = require('./interact_api');
+// const interactUi = require('./interact_ui');
 
 const onBrowse = function(event) {
   event.preventDefault();
-  console.log('browse clicked')
+  console.log('browse clicked');
   $('#welcome-page').hide();
   $('#browse-all').show();
 };
@@ -20,9 +22,27 @@ const onCreateTopChosen = function(event) {
   event.preventDefault();
   $('#add-new-modal').modal('hide');
   $('#create-top-modal').modal('show');
-  //add profile if not already there
 };
 
+const onCreateBottomChosen = function(event) {
+  event.preventDefault();
+  $('#add-new-modal').modal('hide');
+  $('#create-bottom-modal').modal('show');
+};
+
+const onCreateAccessoryChosen = function(event) {
+  event.preventDefault();
+  console.log('create new accessory modal to pop up');
+  $('#add-new-modal').modal('hide');
+  $('#create-accessory-modal').modal('show');
+};
+
+const onCreateShoesChosen = function(event) {
+  event.preventDefault();
+  console.log('create new accessory modal to pop up');
+  $('#add-new-modal').modal('hide');
+  $('#create-shoes-modal').modal('show');
+};
 
 
 
@@ -32,9 +52,11 @@ const addHandlers = () => {
   $('#browse').on('click', onBrowse);
   $('#add-new').on('click', onAddNew);
   $('#add-top-option').on('click', onCreateTopChosen);
-  $('#add-bottom-option').on('click',function(){$('#create-bottom-modal').modal('show');});
-  $('#add-shoes-option').on('click',function(){$('#create-shoes-modal').modal('show');});
-  $('#add-accessory-option').on('click',function(){$('#create-accessory-modal').modal('show');});
+  $('#add-bottom-option').on('click',onCreateBottomChosen);
+  $('#add-shoes-option').on('click',onCreateShoesChosen);
+  $('#add-accessory-option').on('click',onCreateAccessoryChosen);
+
+
 };
 
 

@@ -5,6 +5,7 @@ const api = require('./api');
 const profileApi = require('../profile/profile_api');
 
 const setCurrentProfile = function(data) {
+  $('#sign-in-modal').modal('hide');
   let profile_id = data.user.profile.id;
   console.log('the profile id is'+profile_id)
   $('.current-profile').val(profile_id)
