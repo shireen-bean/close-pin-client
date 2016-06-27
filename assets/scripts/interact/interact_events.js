@@ -9,6 +9,7 @@ const onBrowse = function(event) {
   event.preventDefault();
   console.log('browse clicked');
   $('#welcome-page').hide();
+  $('#display-outfits').hide();
   $('#browse-all').show();
 };
 
@@ -48,6 +49,7 @@ const onPins = function(event) {
   console.log('pins clicked');
   $('#welcome-page').hide();
   $('#browse-all').hide();
+  $('#display-outfits').show();
   let profile_id = $('.current-profile').val();
   interactApi.getProfile(profile_id)
   .done(interactUi.getOutfitArray)
@@ -57,6 +59,7 @@ const onPins = function(event) {
 
 const addHandlers = () => {
   $('#browse-all').hide();
+  $('#display-outfits').hide();
   $('nav').hide();
   $('#browse').on('click', onBrowse);
   $('#add-new').on('click', onAddNew);

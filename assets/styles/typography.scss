@@ -71,11 +71,19 @@ nav {
   }
 
   #display-outfits {
+    height: 800px;
+    overflow: scroll;
     & .outfit {
       width: 30%;
+      margin: 2em 2em;
+      height: 700px;
       float: left;
       & img {
         width:50%;
+      }
+      & .delete-outfit-button {
+        text-align: right;
+        display: block;
       }
     }
   }
