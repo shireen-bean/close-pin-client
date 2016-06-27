@@ -1,3 +1,6 @@
+$cursive-font: 'Pacifico', cursive;
+
+
 nav {
 & button{
   font-size: 2em;
@@ -5,5 +8,6 @@ nav {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 4em;
+  font-family: $cursive-font;
 }

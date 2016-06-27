@@ -52,10 +52,21 @@ const getShoe = function(shoe_id){
   });
 };
 
+const deleteOutfit = function(outfit_id) {
+  return $.ajax({
+    url: app.host + '/outfits/'+outfit_id,
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 module.exports = {
   getProfile,
   getShirt,
   getBottom,
   getAccessory,
   getShoe,
+  deleteOutfit,
 };

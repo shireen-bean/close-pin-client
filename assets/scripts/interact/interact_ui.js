@@ -6,35 +6,50 @@ const failure = (error) => {
   console.error(error);
 };
 
-const displayShirt = function(data) {
-  let image = data.shirt.image;
-  console.log(image);
-  $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
-};
+// const displayShirt = function(data) {
+//   let image = data.shirt.image;
+//   console.log(image);
+//   $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
+// };
+//
+// const displayBottom = function(data) {
+//   let image = data.bottom.image;
+//   console.log(image);
+//   $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
+// };
+//
+// const displayAccessory = function(data) {
+//   let image = data.accessory.image;
+//   console.log(image);
+//   $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
+// };
+//
+// const displayShoe = function(data) {
+//   let image = data.shoe.image;
+//   console.log(image);
+//   $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
+// };
 
-const displayBottom = function(data) {
-  let image = data.bottom.image;
-  console.log(image);
-  $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
-};
+const deleteOutfitSuccess = function(){
+  console.log('outfit deleted');
+}
 
-const displayAccessory = function(data) {
-  let image = data.accessory.image;
-  console.log(image);
-  $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
-};
-
-const displayShoe = function(data) {
-  let image = data.shoe.image;
-  console.log(image);
-  $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
-};
+const onDeleteOutfit = function(event){
+  event.preventDefault();
+  let outfit_id = $(this).val();
+  interactApi.deleteOutfit(outfit_id)
+  .done(deleteOutfitSuccess)
+  .fail(failure)
+}
 
 const getOutfitArray = function(data) {
+  $('#display-outfits').html('');
   let outfitArray = data.profile.outfits;
   console.log(outfitArray);
   for (let i=0;i<outfitArray.length;i++){
-    $('#display-outfits').append("<div class='outfit' id='outfit"+outfitArray[i].id+"'></div>")
+    $('#display-outfits').append("<div class='outfit' id='outfit"+outfitArray[i].id+"'></div>");
+    $("#outfit"+outfitArray[i].id).append("<button class='delete-outfit-button' id='delete-outfit"+outfitArray[i].id+"' value='"+outfitArray[i].id+"'>Delete</button>");
+    $("#delete-outfit"+outfitArray[i].id).on('click',onDeleteOutfit);
     let shirt_id = outfitArray[i].shirt_id;
     console.log(shirt_id);
     interactApi.getShirt(shirt_id)
@@ -72,7 +87,6 @@ const getOutfitArray = function(data) {
       $("#outfit"+outfitArray[i].id).append("<img src='"+image+"'>")
     })
     .fail(failure);
-
   }
 }
 
