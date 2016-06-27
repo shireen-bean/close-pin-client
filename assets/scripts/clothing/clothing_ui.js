@@ -58,6 +58,17 @@ const showAllAccessoriesSuccess = function(data) {
 }
 };
 
+const showAllShoesSuccess = function(data) {
+  $('#show-all').html('');
+  let shoesArray = data.profile.shoes;
+  console.log(shoesArray);
+  for (let i=0;i<shoesArray.length;i++){
+    if (shoesArray[i].image !== null){
+    $("#show-all").append("<img src='"+shoesArray[i].image+"' alt='"+shoesArray[i].name+"'>")
+  }
+}
+};
+
 
 module.exports = {
   failure,
@@ -68,4 +79,5 @@ module.exports = {
   showAllTopsSuccess,
   showAllBottomsSuccess,
   showAllAccessoriesSuccess,
+  showAllShoesSuccess,
 };
