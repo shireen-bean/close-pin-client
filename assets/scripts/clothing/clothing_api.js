@@ -46,6 +46,16 @@ const createShoes = function(data) {
   });
 };
 
+const showAllTops = function(profile_id){
+  return $.ajax({
+    url: app.host + '/profiles/'+profile_id,
+    method: "GET",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+  };
+
 
 
 module.exports = {
@@ -53,4 +63,5 @@ module.exports = {
   createBottom,
   createAccessory,
   createShoes,
+  showAllTops,
 };

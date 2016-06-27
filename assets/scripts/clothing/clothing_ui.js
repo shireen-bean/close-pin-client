@@ -23,7 +23,17 @@ const createAccessorySuccess = function(data) {
 const createShoesSuccess = function(data) {
   console.log(data);
   console.log('new shoes created');
+};
+
+const showAllTopsSuccess = function(data) {
+  let shirtsArray = data.profile.shirts;
+  console.log(shirtsArray);
+  for (let i=0;i<shirtsArray.length;i++){
+    if (shirtsArray[i].image != null){
+    $("#show-all").append("<img src='"+shirtsArray[i].image+"' alt='"+shirtsArray[i].name+"'>")
+  }
 }
+};
 
 
 module.exports = {
@@ -32,4 +42,5 @@ module.exports = {
   createBottomSuccess,
   createAccessorySuccess,
   createShoesSuccess,
+  showAllTopsSuccess,
 };
