@@ -2,8 +2,8 @@
 
 // const getFormFields = require('../../../lib/get-form-fields');
 
-// const interactApi = require('./interact_api');
-// const interactUi = require('./interact_ui');
+const interactApi = require('./interact_api');
+const interactUi = require('./interact_ui');
 
 const onBrowse = function(event) {
   event.preventDefault();
@@ -44,7 +44,15 @@ const onCreateShoesChosen = function(event) {
   $('#create-shoes-modal').modal('show');
 };
 
-
+const onPins = function(event) {
+  console.log('pins clicked');
+  $('#welcome-page').hide();
+  $('#browse-all').hide();
+  let profile_id = $('.current-profile').val();
+  interactApi.getProfile(profile_id)
+  .done(interactUi.getOutfitArray)
+  .fail(interactUi.failure);
+}
 
 
 const addHandlers = () => {
@@ -58,6 +66,7 @@ const addHandlers = () => {
   $('#add-accessory-option').on('click',onCreateAccessoryChosen);
 
 
+  $('#pins').on('click',onPins);
 };
 
 

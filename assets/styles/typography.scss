@@ -69,3 +69,13 @@ nav {
       width:100%;
     }
   }
+
+  #display-outfits {
+    & .outfit {
+      width: 30%;
+      float: left;
+      & img {
+        width:50%;
+      }
+    }
+  }
