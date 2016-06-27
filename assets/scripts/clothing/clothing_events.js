@@ -44,6 +44,14 @@ const onDisplayTops = function(event) {
   clothingApi.showAllTops(profile_id)
   .done(clothingUi.showAllTopsSuccess)
   .fail(clothingUi.failure);
+};
+
+const onDisplayBottoms = function(event) {
+  event.preventDefault();
+  let profile_id = $('.current-profile').val();
+  clothingApi.showAllTops(profile_id)
+  .done(clothingUi.showAllBottomsSuccess)
+  .fail(clothingUi.failure);
 }
 
 
@@ -54,6 +62,8 @@ const addHandlers = () => {
   $('#new-accessory').on('submit', onCreateAccessory);
   $('#new-shoes').on('submit', onCreateShoes);
   $('#tops-all').on('click', onDisplayTops);
+
+  $('#bottoms-all').on('click', onDisplayBottoms);
 };
 //
 module.exports = {

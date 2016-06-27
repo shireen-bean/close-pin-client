@@ -26,11 +26,23 @@ const createShoesSuccess = function(data) {
 };
 
 const showAllTopsSuccess = function(data) {
+  $('#show-all').html('');
   let shirtsArray = data.profile.shirts;
   console.log(shirtsArray);
   for (let i=0;i<shirtsArray.length;i++){
-    if (shirtsArray[i].image != null){
+    if (shirtsArray[i].image !== null){
     $("#show-all").append("<img src='"+shirtsArray[i].image+"' alt='"+shirtsArray[i].name+"'>")
+  }
+}
+};
+
+const showAllBottomsSuccess = function(data) {
+  $('#show-all').html('');
+  let bottomsArray = data.profile.bottoms;
+  console.log(bottomsArray);
+  for (let i=0;i<bottomsArray.length;i++){
+    if (bottomsArray[i].image !== null){
+    $("#show-all").append("<img src='"+bottomsArray[i].image+"' alt='"+bottomsArray[i].name+"'>")
   }
 }
 };
@@ -43,4 +55,5 @@ module.exports = {
   createAccessorySuccess,
   createShoesSuccess,
   showAllTopsSuccess,
+  showAllBottomsSuccess,
 };
