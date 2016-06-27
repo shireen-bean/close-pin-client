@@ -16,15 +16,26 @@ nav {
 #welcome-page {
   height: 100%;
   width: 100%;
-  & .head-image img{
-    width: 20%;
-    margin-left: 40%;
+  // & .head-image img{
+  //   width: 20%;
+  //   margin-left: 40%;
+  // }
+  & #sign-up-button, #sign-in-button {
+    width: 8em;
+    height: 4em;
+    position: relative;
+    left: 44%;
+    margin-top: 30%;
   }
 }
 
 
 #side-tabs {
-    & ul li {
+    & ul{
+      width: 20%;
+      float: left;
+      margin-left: -2.5%;
+    & li {
       & button {
         width: 8em;
         height: 3em;
@@ -33,16 +44,25 @@ nav {
       }
     }
   }
+  }
 
   #show-all{
-    width: 30%;
+    width: 45%;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 600px;
+    float: left;
     border: 2px solid green;
+    overflow: scroll;
     & img {
       width: 100%;
+      float: left;
     }
   }
 
   #build-outfit {
-    width: 20%;
+    width: 30%;
+    float: left;
+    height: 600px;
     border: 2px solid red;
   }

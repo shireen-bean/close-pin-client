@@ -51,6 +51,7 @@ const onToggleSignIn = function(event){
 
 
 const addHandlers = () => {
+  $('#user-dropdown').hide();
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('click', onSignOut);

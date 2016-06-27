@@ -27,7 +27,10 @@ const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app.user);
   console.log('sign in success')
+  $('#sign-up-button').hide();
+  $('#sign-in-button').hide();
   $('nav').show();
+  $('#user-dropdown').show();
   api.getCurrentProfile(data.user.id)
   .done(setCurrentProfile)
   .fail(failure);
@@ -68,10 +71,13 @@ const signUpSuccess = function(data){
 const signOutSuccess = () => {
   console.log('User signed out successfully');
   app.user = null;
-  $('.book-buttons').removeClass('show');
-  $('.book-buttons').addClass('hide');
-  $('.book-content').html('');
-  $('.title-content').html('');
+  $('#browse-all').hide();
+  $('#user-dropdown').hide();
+  $('nav').hide();
+  $('#welcome-page').show();
+  $('#sign-up-button').show();
+  $('#sign-in-button').show();
+
 };
 
 module.exports = {

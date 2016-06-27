@@ -13,11 +13,12 @@ $background-color: #FFFFFF;
   @return mix($plain-black, $color, $percentage);
 }
 
-
-
-
 body{
   background-color: $background-color;
+}
+
+h1 {
+  color: white;
 }
 
 nav {
@@ -33,14 +34,23 @@ nav {
 
 #welcome-page {
   background-image: url('https://static.pexels.com/photos/6805/fashion-men-vintage-colorful-large.jpg');
-  opacity: 0.6;
+  // opacity: 0.6;
   background-repeat: no-repeat;
   background-size: cover;
   border: 2px solid green;
+  & #sign-up-button, #sign-in-button {
+    background-color: transparentize(red, 1);
+    text-shadow: none !important;
+    border:3px solid $plain-white !important;
+    box-shadow:none !important;
+    background-color: $plain-white;
+    color:$blue-grey;
+  }
 }
 
 #side-tabs {
     & ul li {
+      border: 3px solid green;
       & button {
         background-color: transparentize($plain-black, 1);
         text-shadow: none !important;

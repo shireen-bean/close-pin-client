@@ -48,6 +48,7 @@ const onCreateShoesChosen = function(event) {
 
 
 const addHandlers = () => {
+  $('#browse-all').hide();
   $('nav').hide();
   $('#browse').on('click', onBrowse);
   $('#add-new').on('click', onAddNew);

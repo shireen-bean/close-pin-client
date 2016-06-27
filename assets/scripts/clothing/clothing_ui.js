@@ -31,7 +31,7 @@ const showAllTopsSuccess = function(data) {
   console.log(shirtsArray);
   for (let i=0;i<shirtsArray.length;i++){
     if (shirtsArray[i].image !== null){
-    $("#show-all").append("<img src='"+shirtsArray[i].image+"' alt='"+shirtsArray[i].name+"'>")
+    $("#show-all").append("<img data-shirt-id='"+shirtsArray[i].id+"'src='"+shirtsArray[i].image+"' alt='"+shirtsArray[i].name+"'>")
   }
 }
 };
@@ -42,7 +42,7 @@ const showAllBottomsSuccess = function(data) {
   console.log(bottomsArray);
   for (let i=0;i<bottomsArray.length;i++){
     if (bottomsArray[i].image !== null){
-    $("#show-all").append("<img src='"+bottomsArray[i].image+"' alt='"+bottomsArray[i].name+"'>")
+    $("#show-all").append("<img data-bottom-id='"+bottomsArray[i].id+"' src='"+bottomsArray[i].image+"' alt='"+bottomsArray[i].name+"'>")
   }
 }
 };
@@ -53,7 +53,7 @@ const showAllAccessoriesSuccess = function(data) {
   console.log(accessoriesArray);
   for (let i=0;i<accessoriesArray.length;i++){
     if (accessoriesArray[i].image !== null){
-    $("#show-all").append("<img src='"+accessoriesArray[i].image+"' alt='"+accessoriesArray[i].name+"'>")
+    $("#show-all").append("<img data-accessory-id='"+accessoriesArray[i].id+"' src='"+accessoriesArray[i].image+"' alt='"+accessoriesArray[i].name+"'>")
   }
 }
 };
@@ -64,7 +64,7 @@ const showAllShoesSuccess = function(data) {
   console.log(shoesArray);
   for (let i=0;i<shoesArray.length;i++){
     if (shoesArray[i].image !== null){
-    $("#show-all").append("<img src='"+shoesArray[i].image+"' alt='"+shoesArray[i].name+"'>")
+    $("#show-all").append("<img data-shoes-id='"+shoesArray[i].id+"'src='"+shoesArray[i].image+"' alt='"+shoesArray[i].name+"'>")
   }
 }
 };
