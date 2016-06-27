@@ -16,8 +16,9 @@ const onCreateProfile = function(event) {
 
 const onUpdateProfile = function(event) {
   event.preventDefault();
+  let profile_id = $('.current-profile').val();
   let data = getFormFields(event.target);
-  profileApi.updateProfile(data)
+  profileApi.updateProfile(data, profile_id)
   .done(profileUi.updateProfileSuccess)
   .fail(profileUi.failure);
 }

@@ -11,9 +11,9 @@ const createProfile = function(user_id) {
   });
 };
 
-const updateProfile = function(data){
+const updateProfile = function(data, profile_id){
   return $.ajax({
-    url: app.host + '/profiles/' + data.profile.id,
+    url: app.host + '/profiles/' + profile_id,
     method: "PATCH",
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -26,5 +26,5 @@ const updateProfile = function(data){
 
 module.exports = {
   createProfile,
-
+  updateProfile,
 };

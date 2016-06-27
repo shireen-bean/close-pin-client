@@ -71,8 +71,7 @@
       </div>
       <div id='build-outfit'>
         <p>Build and Outfit</p>
-        <div id='outfit-top'>
-        </div>
+        <div id='outfit-top'></div>
         <div id='outfit-bottom'></div>
         <div id='outfit-shoes'></div>
         <div id='outfit-accessory'></div>
@@ -188,7 +187,7 @@
                      <h4 class="modal-title">Edit Profile</h4>
                  </div>
                  <div class="modal-body">
-                   <form id='create-profile'>
+                   <form id='update-profile'>
                      <fieldset>
                        <legend>Create Profile</legend>
                        <input type='text' name='profile[given_name]' placeholder='First Name'>
@@ -196,7 +195,7 @@
                        <input type='text' name='profile[gender]' placeholder='Gender'>
                        <input type='text' name='profile[description]' placeholder='Tagline'>
                        <input type='text' name='profile[picture]' placeholder='Url to pic'>
-                       <input class='current-user' type='text' name='profile[user_id]' placeholder='Current User'>
+                       <input class='current-profile' type='text' name='profile[user_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Update!'>
                      </fieldset>
                    </form>

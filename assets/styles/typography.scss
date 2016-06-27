@@ -65,4 +65,7 @@ nav {
     float: left;
     height: 600px;
     border: 2px solid red;
+    & img {
+      width:100%;
+    }
   }

@@ -30,30 +30,42 @@ const createShoesSuccess = function(data) {
 
 const onSelectTop = function(event) {
   event.preventDefault();
-  let shirt_id = $(this).val();
-  console.log(shirt_id);
-  $( "#new-outfit input[name='outfit[shirt_id]']" ).val(shirt_id);
+  let id = $(this).val();
+  console.log(id);
+  let image_url = $(this).find('img').attr('src');
+  console.log(image_url)
+  $( "#new-outfit input[name='outfit[shirt_id]']" ).val(id);
+  $('#outfit-top').html("<img src='"+image_url+"'>")
 };
 
 const onSelectBottom = function(event) {
   event.preventDefault();
-  let bottom_id = $(this).val();
-  console.log(bottom_id);
-  $( "#new-outfit input[name='outfit[bottom_id]']" ).val(bottom_id);
+  let id = $(this).val();
+  console.log(id);
+  let image_url = $(this).find('img').attr('src');
+  console.log(image_url)
+  $( "#new-outfit input[name='outfit[bottom_id]']" ).val(id);
+  $('#outfit-bottom').html("<img src='"+image_url+"'>")
 };
 
 const onSelectAccessory = function(event) {
   event.preventDefault();
-  let accessory_id = $(this).val();
-  console.log(accessory_id);
-  $( "#new-outfit input[name='outfit[accessory_id]']" ).val(accessory_id);
+  let id = $(this).val();
+  console.log(id);
+  let image_url = $(this).find('img').attr('src');
+  console.log(image_url)
+  $( "#new-outfit input[name='outfit[accessory_id]']" ).val(id);
+  $('#outfit-accessory').html("<img src='"+image_url+"'>")
 };
 
 const onSelectShoes = function(event) {
   event.preventDefault();
-  let shoes_id = $(this).val();
-  console.log(shoes_id);
-  $( "#new-outfit input[name='outfit[shoe_id]']" ).val(shoes_id);
+  let id = $(this).val();
+  console.log(id);
+  let image_url = $(this).find('img').attr('src');
+  console.log(image_url)
+  $( "#new-outfit input[name='outfit[shoe_id]']" ).val(id);
+  $('#outfit-shoes').html("<img src='"+image_url+"'>");
 };
 
 const showAllTopsSuccess = function(data) {
