@@ -36,14 +36,26 @@ const signInSuccess = (data) => {
   .fail(failure);
 };
 
+const setProfileAfterCreation = function(data) {
+  let profile_id = data.profile.id;
+  console.log('the profile id is'+profile_id)
+  $('.current-profile').val(profile_id)
+  $('#sign-up-button').hide();
+  $('#sign-in-button').hide();
+  $('nav').show();
+  $('#user-dropdown').show();
+  $('#sign-up-modal').modal('hide');
+};
+
 const signInSuccessAfterSignUp = function(data) {
   app.user = data.user;
   console.log(app.user);
   console.log('sign in success after sign up')
   console.log(app.user)
-  console.log(data)
-  profileApi.createProfile(data)
-  .done(success)
+  let user_id = app.user.id;
+  console.log('the user id is'+ user_id)
+  profileApi.createProfile(user_id)
+  .done(setProfileAfterCreation)
   .fail(failure);
 }
 

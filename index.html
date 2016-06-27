@@ -70,7 +70,25 @@
         <p>insert clothes here</p>
       </div>
       <div id='build-outfit'>
-        <p>insert clothes here</p>
+        <p>Build and Outfit</p>
+        <div id='outfit-top'>
+        </div>
+        <div id='outfit-bottom'></div>
+        <div id='outfit-shoes'></div>
+        <div id='outfit-accessory'></div>
+        <form id='new-outfit'>
+          <fieldset>
+            <legend>Build an Outfit</legend>
+            <input type='text' name='outfit[shirt_id]' placeholder='shirt'>
+            <input type='text' name='outfit[bottom_id]' placeholder='bottom'>
+            <input type='text' name='outfit[shoe_id]' placeholder='shoe id'>
+            <input type='text' name='outfit[description]' placeholder='description'>
+            <input type='text' name='outfit[accessory_id]' placeholder='accessory'>
+            <input type='text' name='outfit[date_wear]' placeholder='date ex: YYYY-MM-DD'>
+            <input class='current-profile' type='text' name='outfit[profile_id]' placeholder='Current Profile'>
+            <input type='submit' name='submit' value='Create!'>
+          </fieldset>
+        </form>
       </div>
   </div>
 
@@ -170,7 +188,7 @@
                      <h4 class="modal-title">Edit Profile</h4>
                  </div>
                  <div class="modal-body">
-                   <form id='update-profile'>
+                   <form id='create-profile'>
                      <fieldset>
                        <legend>Create Profile</legend>
                        <input type='text' name='profile[given_name]' placeholder='First Name'>

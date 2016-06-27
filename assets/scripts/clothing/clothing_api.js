@@ -56,6 +56,17 @@ const getAll = function(profile_id){
   });
   };
 
+const newOutfit = function(data) {
+  return $.ajax({
+    url: app.host + '/outfits',
+    method: "POST",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
 
 
 module.exports = {
@@ -64,4 +75,5 @@ module.exports = {
   createAccessory,
   createShoes,
   getAll,
+  newOutfit,
 };

@@ -5,7 +5,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 const clothingApi = require('./clothing_api');
 const clothingUi = require('./clothing_ui');
 
-const onCreateShirt = function(event){
+const onCreateShirt = function(event) {
   event.preventDefault();
   console.log(event.target);
   let data = getFormFields(event.target);
@@ -70,6 +70,13 @@ const onDisplayShoes = function(event) {
   .fail(clothingUi.failure);
 };
 
+const onCreateOutfit = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  clothingApi.newOutfit(data)
+  .done(clothingUi.newOutfitSuccess)
+  .fail(clothingUi.failure);
+};
 
 
 const addHandlers = () => {
@@ -81,6 +88,8 @@ const addHandlers = () => {
   $('#bottoms-all').on('click', onDisplayBottoms);
   $('#accessories-all').on('click', onDisplayAccessories);
   $('#shoes-all').on('click', onDisplayShoes);
+
+  $('#new-outfit').on('submit', onCreateOutfit);
 };
 //
 module.exports = {

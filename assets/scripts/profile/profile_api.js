@@ -1,13 +1,13 @@
 const app = require('../app.js');
 
-const createProfile = (data) => {
+const createProfile = function(user_id) {
   return $.ajax({
     url: app.host + '/profiles',
     method: "POST",
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: {"user_id": data.user.id},
+    data: {"profile[user_id]": user_id},
   });
 };
 
