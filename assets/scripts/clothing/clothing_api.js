@@ -46,7 +46,7 @@ const createShoes = function(data) {
   });
 };
 
-const showAllTops = function(profile_id){
+const getAll = function(profile_id){
   return $.ajax({
     url: app.host + '/profiles/'+profile_id,
     method: "GET",
@@ -63,5 +63,5 @@ module.exports = {
   createBottom,
   createAccessory,
   createShoes,
-  showAllTops,
+  getAll,
 };
