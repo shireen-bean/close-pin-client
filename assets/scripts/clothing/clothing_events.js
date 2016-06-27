@@ -41,7 +41,7 @@ const onCreateShoes = function(event) {
 const onDisplayTops = function(event) {
   event.preventDefault();
   let profile_id = $('.current-profile').val();
-  clothingApi.showAllTops(profile_id)
+  clothingApi.getAll(profile_id)
   .done(clothingUi.showAllTopsSuccess)
   .fail(clothingUi.failure);
 };

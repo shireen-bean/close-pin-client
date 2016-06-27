@@ -37,6 +37,9 @@ nav {
   #show-all{
     width: 30%;
     border: 2px solid green;
+    & img {
+      width: 100%;
+    }
   }
 
   #build-outfit {
