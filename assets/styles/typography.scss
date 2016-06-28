@@ -54,7 +54,8 @@ nav {
   }
   }
 
-  #show-all{
+  #show-all {
+    text-align: center;
     width: 50%;
     margin-left: 3%;
     margin-right: 3%;
@@ -62,26 +63,50 @@ nav {
     float: left;
     border: 2px solid green;
     overflow-y: scroll;
+    & p {
+      margin-top: 150px;
+    }
     & button {
       width: 100%;
       & img{
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
         display:block;
       }
     }
   }
+
+  #outfit-top, #outfit-bottom {
+    width: 40%;
+    margin: 2% 5%;
+    height: 250px;
+    float: left;
+  }
+
+  #outfit-shoes, #outfit-accessory{
+    width: 40%;
+    height: 200px;
+    margin: 2% 5%;
+    float: left;
+  }
+
 
   #build-outfit {
     width: 30%;
     float: left;
     height: 600px;
     border: 2px solid red;
-    overflow: scroll;
+    // overflow: scroll;
     & img {
       width:100%;
-      float:left;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    & form {
+      text-align: center;
     }
   }
+
 
   #display-outfits {
     height: 800px;
