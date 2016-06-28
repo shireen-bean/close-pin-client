@@ -46,6 +46,9 @@ const getOutfitArray = function(data) {
   $('#display-outfits').html('');
   let outfitArray = data.profile.outfits;
   console.log(outfitArray);
+  if (outfitArray.length == 0) {
+    $('#display-outfits').html('<h4> You dont have any outfits yet! Make some in the BROWSE tab </h4>');
+  } else {
   for (let i=0;i<outfitArray.length;i++){
     $('#display-outfits').append("<div class='outfit' id='outfit"+outfitArray[i].id+"'></div>");
     $("#outfit"+outfitArray[i].id).append("<button class='delete-outfit-button' id='delete-outfit"+outfitArray[i].id+"' value='"+outfitArray[i].id+"'>Delete</button>");
@@ -89,9 +92,15 @@ const getOutfitArray = function(data) {
     .fail(failure);
   }
 }
+};
 
+const getMediaSuccess = function(data) {
+  console.log('media retrieved');
+  console.log(data);
+}
 
 module.exports = {
   failure,
   getOutfitArray,
+  getMediaSuccess,
 };

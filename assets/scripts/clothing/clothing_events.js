@@ -73,6 +73,7 @@ const onDisplayShoes = function(event) {
 const onCreateOutfit = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
+  debugger;
   clothingApi.newOutfit(data)
   .done(clothingUi.newOutfitSuccess)
   .fail(clothingUi.failure);

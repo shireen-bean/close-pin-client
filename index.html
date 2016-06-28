@@ -70,8 +70,7 @@
             <input class='hidden' type='text' name='outfit[shoe_id]' placeholder='shoe id'>
             <input class='hidden' type='text' name='outfit[description]' placeholder='description'>
             <input class='hidden' type='text' name='outfit[accessory_id]' placeholder='accessory'>
-            <input class='hidden' type='text' name='outfit[date_wear]' placeholder='date ex: YYYY-MM-DD'>
-            <input class='hidden' class='current-profile' type='text' name='outfit[profile_id]' placeholder='Current Profile'>
+            <input class='current-profile' type='text' name='outfit[profile_id]' placeholder='Current Profile'>
           </fieldset>
         </form>
         <div id='outfit-top'></div>
@@ -83,6 +82,10 @@
 
 
   <div id='display-outfits'>
+    <h1>Clothes Pin</h1>
+  </div>
+
+  <div id='display-media'>
     <h1>Clothes Pin</h1>
   </div>
 
@@ -248,7 +251,7 @@
                        <input type='text' name='shirt[sleeves]' placeholder='sleeves'>
                        <input type='text' name='shirt[tags]' placeholder='tags'>
                        <input type='text' name='shirt[image]' placeholder='url to image'>
-                       <input class='current-profile' type='text' name='shirt[profile_id]' placeholder='Current User'>
+                       <input class='current-profile hidden' type='text' name='shirt[profile_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Create!'>
                      </fieldset>
                    </form>
@@ -276,11 +279,11 @@
                        <input type='text' name='bottom[brand]' placeholder='Brand'>
                        <input type='text' name='bottom[color]' placeholder='Color'>
                        <input type='text' name='bottom[business]' placeholder='Business?'>
-                       <input type='text' name='bottom[leg_length]' placeholder='pattern'>
-                       <input type='text' name='bottom[description]' placeholder='sleeves'>
+                       <input type='text' name='bottom[leg_length]' placeholder='leg length'>
+                       <input type='text' name='bottom[description]' placeholder='Description'>
                        <!-- <input type='text' name='bottom[tags]' placeholder='tags'> -->
                        <input type='text' name='bottom[image]' placeholder='url to image'>
-                       <input class='current-profile' type='text' name='bottom[profile_id]' placeholder='Current User'>
+                       <input class='current-profile hidden' type='text' name='bottom[profile_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Create!'>
                      </fieldset>
                    </form>
@@ -309,7 +312,7 @@
                        <input type='text' name='accessory[description]' placeholder='sleeves'>
                        <!-- <input type='text' name='bottom[tags]' placeholder='tags'> -->
                        <input type='text' name='accessory[image]' placeholder='url to image'>
-                       <input class='current-profile' type='text' name='accessory[profile_id]' placeholder='Current User'>
+                       <input class='current-profile hidden' type='text' name='accessory[profile_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Create!'>
                      </fieldset>
                    </form>
@@ -338,7 +341,7 @@
                        <input type='text' name='shoe[description]' placeholder='sleeves'>
                        <!-- <input type='text' name='bottom[tags]' placeholder='tags'> -->
                        <input type='text' name='shoe[image]' placeholder='url to image'>
-                       <input class='current-profile' type='text' name='shoe[profile_id]' placeholder='Current User'>
+                       <input class='current-profile hidden' type='text' name='shoe[profile_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Create!'>
                      </fieldset>
                    </form>

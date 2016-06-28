@@ -12,3 +12,7 @@
 #side-tabs ul {
   list-style-type: none;
 }
+
+.current-profile {
+  display: none;
+}
