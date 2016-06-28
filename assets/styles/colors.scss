@@ -71,6 +71,15 @@ nav {
   border: 7px solid $plain-black;
 }
 
+.delete-item {
+  background-color: transparentize($pale-purple, 1);
+  text-shadow: none !important;
+  border:3px solid $pale-purple !important;
+  box-shadow:none !important;
+  background-color: $pale-purple;
+  color:$plain-black;
+}
+
   #display-outfits {
     border: 7px solid $plain-black;
     & .outfit {

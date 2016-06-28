@@ -81,6 +81,9 @@ header {
     }
     & button {
       width: 100%;
+      & .delete-item {
+        width:50%;
+      }
       & img{
         width: 80%;
         margin: 0 auto;
@@ -88,6 +91,10 @@ header {
       }
     }
   }
+
+.delete-item {
+  width:50%;
+}
 
   #outfit-top, #outfit-bottom {
     width: 45%;
