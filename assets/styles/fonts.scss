@@ -1,5 +1,9 @@
 $cursive-font: 'Pacifico', cursive;
 
+body {
+  font-family: $cursive-font;
+  font-size: 18px;
+}
 
 nav {
 & button{
@@ -11,3 +15,13 @@ h1 {
   font-size: 4em;
   font-family: $cursive-font;
 }
+
+#side-tabs {
+    & ul{
+    & li {
+      & button {
+        font-size: 1.25em;
+      }
+    }
+  }
+  }
