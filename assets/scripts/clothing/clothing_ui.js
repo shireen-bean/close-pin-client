@@ -11,21 +11,37 @@ const failure = (error) => {
 const createShirtSuccess = function(data){
   console.log(data);
   console.log('new shirt created');
+  let image = data.shirt.image
+  $('#create-top-modal').modal('hide');
+  $('#shirt-success-image').attr('src',image)
+  $('#shirt-success').modal('show');
 };
 
 const createBottomSuccess = function(data) {
   console.log(data);
   console.log('new bottom created');
+  let image = data.bottom.image
+  $('#create-bottom-modal').modal('hide');
+  $('#bottom-success-image').attr('src',image)
+  $('#bottom-success').modal('show');
 };
 
 const createAccessorySuccess = function(data) {
   console.log(data);
   console.log('new accessory created');
+  let image = data.accessory.image
+  $('#create-accessory-modal').modal('hide');
+  $('#accessory-success-image').attr('src',image)
+  $('#accessory-success').modal('show');
 };
 
 const createShoesSuccess = function(data) {
   console.log(data);
   console.log('new shoes created');
+  let image = data.shoe.image
+  $('#create-shoes-modal').modal('hide');
+  $('#shoe-success-image').attr('src',image)
+  $('#shoe-success').modal('show');
 };
 
 const onSelectTop = function(event) {
@@ -140,7 +156,7 @@ const showAllAccessoriesSuccess = function(data) {
     if (accessoriesArray[i].image !== null){
     $("#show-all").append("<button id='accessory"+accessoriesArray[i].id+"' class='accessory-image' data-accessory-index='"+i+"' value='"+accessoriesArray[i].id+"'><img src='"+accessoriesArray[i].image+"' alt='"+accessoriesArray[i].name+"'></button>");
     $("#accessory"+accessoriesArray[i].id).on('click', onSelectAccessory)
-    $("#accessory"+accessoriesArray[i].id).append("<button class='delete-accessory' id='delete-accessory"+accessoriesArray[i].id+"' value='"+accessoriesArray[i].id+"'>Delete "+accessoriesArray[i].name+"</button>");
+    $("#accessory"+accessoriesArray[i].id).append("<button class='delete-accessory' id='delete-accessory"+accessoriesArray[i].id+"' value='"+accessoriesArray[i].id+"'>Delete "+accessoriesArray[i].accessory_name+"</button>");
     $('#delete-accessory'+accessoriesArray[i].id).on('click', onDeleteAccessory)
   }
 }

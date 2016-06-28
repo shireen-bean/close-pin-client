@@ -47,7 +47,7 @@
   </div>
 
   <div id='browse-all'>
-
+    <h1>Clothes Pin</h1>
       <div id='side-tabs'>
         <ul>
           <li><button id='tops-all'>Tops</button></li>
@@ -96,6 +96,7 @@
   </div>
 
   <div id='display-weather'>
+    <h1>Clothes Pin</h1>
   </div>
 
 
@@ -252,14 +253,14 @@
                    <form id='new-shirt'>
                      <fieldset>
                        <legend>Add Shirt</legend>
-                       <input type='text' name='shirt[top_name]' placeholder='Name'>
-                       <input type='text' name='shirt[brand]' placeholder='Brand'>
+                       <input type='text' name='shirt[top_name]' placeholder='Name*'>
+                       <!-- <input type='text' name='shirt[brand]' placeholder='Brand'>
                        <input type='text' name='shirt[color]' placeholder='Color'>
                        <input type='text' name='shirt[business]' placeholder='Business?'>
                        <input type='text' name='shirt[pattern]' placeholder='pattern'>
                        <input type='text' name='shirt[sleeves]' placeholder='sleeves'>
-                       <input type='text' name='shirt[tags]' placeholder='tags'>
-                       <input type='text' name='shirt[image]' placeholder='url to image'>
+                       <input type='text' name='shirt[tags]' placeholder='tags'> -->
+                       <input type='text' name='shirt[image]' placeholder='url to image*'>
                        <input class='current-profile hidden' type='text' name='shirt[profile_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Create!'>
                      </fieldset>
@@ -284,14 +285,14 @@
                    <form id='new-bottom'>
                      <fieldset>
                        <legend>Add Bottom</legend>
-                       <input type='text' name='bottom[bottom_name]' placeholder='Name'>
-                       <input type='text' name='bottom[brand]' placeholder='Brand'>
-                       <input type='text' name='bottom[color]' placeholder='Color'>
-                       <input type='text' name='bottom[business]' placeholder='Business?'>
-                       <input type='text' name='bottom[leg_length]' placeholder='leg length'>
-                       <input type='text' name='bottom[description]' placeholder='Description'>
+                       <input type='text' name='bottom[bottom_name]' placeholder='Name*'>
+                       <!-- <input type='text' name='bottom[brand]' placeholder='Brand'>
+                       <input type='text' name='bottom[color]' placeholder='Color'> -->
+                       <!-- <input type='text' name='bottom[business]' placeholder='Business?'> -->
+                       <!-- <input type='text' name='bottom[leg_length]' placeholder='leg length'>
+                       <input type='text' name='bottom[description]' placeholder='Description'> -->
                        <!-- <input type='text' name='bottom[tags]' placeholder='tags'> -->
-                       <input type='text' name='bottom[image]' placeholder='url to image'>
+                       <input type='text' name='bottom[image]' placeholder='Image URL*'>
                        <input class='current-profile hidden' type='text' name='bottom[profile_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Create!'>
                      </fieldset>
@@ -316,11 +317,11 @@
                    <form id='new-accessory'>
                      <fieldset>
                        <legend>Add Accessory</legend>
-                       <input type='text' name='accessory[accessory_name]' placeholder='Name'>
-                       <input type='text' name='accessory[color]' placeholder='Color'>
-                       <input type='text' name='accessory[description]' placeholder='Description'>
+                       <input type='text' name='accessory[accessory_name]' placeholder='Name*'>
+                       <!-- <input type='text' name='accessory[color]' placeholder='Color'>
+                       <input type='text' name='accessory[description]' placeholder='Description'> -->
                        <!-- <input type='text' name='bottom[tags]' placeholder='tags'> -->
-                       <input type='text' name='accessory[image]' placeholder='Image URL'>
+                       <input type='text' name='accessory[image]' placeholder='Image URL*'>
                        <input class='current-profile hidden' type='text' name='accessory[profile_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Create!'>
                      </fieldset>
@@ -345,11 +346,11 @@
                    <form id='new-shoes'>
                      <fieldset>
                        <legend>Add Shoes</legend>
-                       <input type='text' name='shoe[name]' placeholder='Name'>
-                       <input type='text' name='shoe[color]' placeholder='Color'>
-                       <input type='text' name='shoe[description]' placeholder='Description'>
+                       <input type='text' name='shoe[name]' placeholder='Name*'>
+                       <!-- <input type='text' name='shoe[color]' placeholder='Color'>
+                       <input type='text' name='shoe[description]' placeholder='Description'> -->
                        <!-- <input type='text' name='bottom[tags]' placeholder='tags'> -->
-                       <input type='text' name='shoe[image]' placeholder='Image URL'>
+                       <input type='text' name='shoe[image]' placeholder='Image URL*'>
                        <input class='current-profile hidden' type='text' name='shoe[profile_id]' placeholder='Current User'>
                        <input type='submit' name='submit' value='Create!'>
                      </fieldset>
@@ -363,6 +364,77 @@
       </div>
       <!-- /.modal -->
 
+      <div id="shirt-success" class="modal fade" tabindex="-1" role="dialog">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title">Shirt Successfully Added!</h4>
+                 </div>
+                 <div class="modal-body">
+                   <img class='success-image' id='shirt-success-image' src='' alt='recently added shirt'>
+                 </div>
+                 <!-- /.modal-body -->
+             </div>
+             <!-- /.modal-content -->
+         </div>
+         <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div id="bottom-success" class="modal fade" tabindex="-1" role="dialog">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title">Bottom Successfully Added!</h4>
+                 </div>
+                 <div class="modal-body">
+                   <img class='success-image' id='bottom-success-image' src='' alt='recently added shirt'>
+                 </div>
+                 <!-- /.modal-body -->
+             </div>
+             <!-- /.modal-content -->
+         </div>
+         <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div id="accessory-success" class="modal fade" tabindex="-1" role="dialog">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title">Accessory Successfully Added!</h4>
+                 </div>
+                 <div class="modal-body">
+                   <img class='success-image' id='accessory-success-image' src='' alt='recently added shirt'>
+                 </div>
+                 <!-- /.modal-body -->
+             </div>
+             <!-- /.modal-content -->
+         </div>
+         <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div id="shoe-success" class="modal fade" tabindex="-1" role="dialog">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title">Shoes Successfully Added!</h4>
+                 </div>
+                 <div class="modal-body">
+                   <img class='success-image' id='shoe-success-image' src='' alt='recently added shirt'>
+                 </div>
+                 <!-- /.modal-body -->
+             </div>
+             <!-- /.modal-content -->
+         </div>
+         <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
 
     </body>
