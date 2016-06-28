@@ -68,14 +68,41 @@ const onSelectShoes = function(event) {
   $('#outfit-shoes').html("<img src='"+image_url+"'>");
 };
 
-// const onDeleteTop = function(event) {
-//   event.preventDefault();
-//   let id = $(this).val();
-//   console.log('will delete this shirt id'+id);
-//   clothingApi.deleteTop(id)
-//   .done(function(){console.log('successfully delted shirt')})
-//   .fail(failure);
-// }
+const onDeleteTop = function(event) {
+  event.preventDefault();
+  let id = $(this).val();
+  console.log('will delete this shirt id'+id);
+  clothingApi.deleteTop(id)
+  .done(function(){console.log('successfully deleted shirt')})
+  .fail(failure);
+};
+
+const onDeleteBottom = function(event) {
+  event.preventDefault();
+  let id = $(this).val();
+  console.log('will delete this bottom id'+id);
+  clothingApi.deleteBottom(id)
+  .done(function(){console.log('successfully deleted bottom')})
+  .fail(failure);
+};
+
+const onDeleteAccessory = function(event) {
+  event.preventDefault();
+  let id = $(this).val();
+  console.log('will delete this accessory id'+id);
+  clothingApi.deleteAccessory(id)
+  .done(function(){console.log('successfully deleted accessory')})
+  .fail(failure);
+};
+
+const onDeleteShoe = function(event) {
+  event.preventDefault();
+  let id = $(this).val();
+  console.log('will delete this shoe id '+id);
+  clothingApi.deleteShoe(id)
+  .done(function(){console.log('successfully deleted shoe')})
+  .fail(failure);
+};
 
 const showAllTopsSuccess = function(data) {
   $('#show-all').html('');
@@ -84,9 +111,9 @@ const showAllTopsSuccess = function(data) {
   for (let i=0;i<shirtsArray.length;i++){
     if (shirtsArray[i].image !== null){
     $("#show-all").append("<button id='shirt"+shirtsArray[i].id+"' class='shirt-image' data-shirt-index='"+i+"' value='"+shirtsArray[i].id+"'><img src='"+shirtsArray[i].image+"' alt='"+shirtsArray[i].name+"'></button>");
-    // $("#shirt"+shirtsArray[i].id).append("<button class='delete-shirt' id='delete-shirt"+shirtsArray[i].id+"' value='"+shirtsArray[i].id+"'>Delete</button>");
+    $("#shirt"+shirtsArray[i].id).append("<button class='delete-shirt' id='delete-shirt"+shirtsArray[i].id+"' value='"+shirtsArray[i].id+"'>Delete</button>");
     $("#shirt"+shirtsArray[i].id).on('click', onSelectTop)
-    // $('#delete-shirt'+shirtsArray[i].id).on('click', onDeleteTop)
+    $('#delete-shirt'+shirtsArray[i].id).on('click', onDeleteTop)
   }
 }
 };
@@ -99,6 +126,8 @@ const showAllBottomsSuccess = function(data) {
     if (bottomsArray[i].image !== null){
     $("#show-all").append("<button id='bottom"+bottomsArray[i].id+"' class='bottom-image' data-bottom-index='"+i+"' value='"+bottomsArray[i].id+"'><img src='"+bottomsArray[i].image+"' alt='"+bottomsArray[i].name+"'></button>");
     $("#bottom"+bottomsArray[i].id).on('click', onSelectBottom)
+    $("#bottom"+bottomsArray[i].id).append("<button class='delete-bottom' id='delete-bottom"+bottomsArray[i].id+"' value='"+bottomsArray[i].id+"'>Delete</button>");
+    $('#delete-bottom'+bottomsArray[i].id).on('click', onDeleteBottom)
   }
 }
 };
@@ -111,6 +140,8 @@ const showAllAccessoriesSuccess = function(data) {
     if (accessoriesArray[i].image !== null){
     $("#show-all").append("<button id='accessory"+accessoriesArray[i].id+"' class='accessory-image' data-accessory-index='"+i+"' value='"+accessoriesArray[i].id+"'><img src='"+accessoriesArray[i].image+"' alt='"+accessoriesArray[i].name+"'></button>");
     $("#accessory"+accessoriesArray[i].id).on('click', onSelectAccessory)
+    $("#accessory"+accessoriesArray[i].id).append("<button class='delete-accessory' id='delete-accessory"+accessoriesArray[i].id+"' value='"+accessoriesArray[i].id+"'>Delete</button>");
+    $('#delete-accessory'+accessoriesArray[i].id).on('click', onDeleteAccessory)
   }
 }
 };
@@ -121,8 +152,10 @@ const showAllShoesSuccess = function(data) {
   console.log(shoesArray);
   for (let i=0;i<shoesArray.length;i++){
     if (shoesArray[i].image !== null){
-      $("#show-all").append("<button id='shoes"+shoesArray[i].id+"' class='shoes-image' data-shoes-index='"+i+"' value='"+shoesArray[i].id+"'><img src='"+shoesArray[i].image+"' alt='"+shoesArray[i].name+"'></button>");
-      $("#shoes"+shoesArray[i].id).on('click', onSelectShoes)
+      $("#show-all").append("<button id='shoe"+shoesArray[i].id+"' class='shoes-image' data-shoes-index='"+i+"' value='"+shoesArray[i].id+"'><img src='"+shoesArray[i].image+"' alt='"+shoesArray[i].name+"'></button>");
+      $("#shoe"+shoesArray[i].id).on('click', onSelectShoes)
+      $("#shoe"+shoesArray[i].id).append("<button class='delete-shoe' id='delete-shoe"+shoesArray[i].id+"' value='"+shoesArray[i].id+"'>Delete</button>");
+      $('#delete-shoe'+shoesArray[i].id).on('click', onDeleteShoe)
   }
 }
 };
