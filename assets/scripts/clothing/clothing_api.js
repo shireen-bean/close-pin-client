@@ -67,6 +67,16 @@ const newOutfit = function(data) {
   });
 };
 
+// const deleteTop = function(shirt_id) {
+//   return $.ajax({
+//     url: app.host + '/shirts/'+shirt_id,
+//     method: "DELETE",
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//   });
+// };
+
 
 
 module.exports = {
@@ -76,4 +86,5 @@ module.exports = {
   createShoes,
   getAll,
   newOutfit,
+  // deleteTop,
 };

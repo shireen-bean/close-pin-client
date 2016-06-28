@@ -9,6 +9,9 @@ h4 {
   top:30%;
 }
 
+// body {
+//   margin-top: -20px;
+// }
 nav {
   margin-left: auto;
   margin-right: auto;
@@ -17,8 +20,11 @@ nav {
   }
 }
 
+header {
+  margin-bottom: 0;
+}
 #content {
-  height: 920px;
+  height: 1000px;
 }
 
 #welcome-page {
@@ -32,7 +38,7 @@ nav {
     width: 8em;
     height: 4em;
     position: relative;
-    left: 44%;
+    left: 40%;
     margin-top: 30%;
   }
 }
@@ -54,14 +60,21 @@ nav {
   }
   }
 
+#create-new {
+  text-align: center;
+  & button {
+    display: inline;
+    width: 24%;
+  }
+}
+
   #show-all {
     text-align: center;
     width: 50%;
     margin-left: 3%;
     margin-right: 3%;
-    height: 600px;
+    height: 650px;
     float: left;
-    border: 2px solid green;
     overflow-y: scroll;
     & p {
       margin-top: 150px;
@@ -77,16 +90,16 @@ nav {
   }
 
   #outfit-top, #outfit-bottom {
-    width: 40%;
-    margin: 2% 5%;
+    width: 45%;
+    margin: 2% 2% 4% 0;
     height: 250px;
     float: left;
   }
 
   #outfit-shoes, #outfit-accessory{
-    width: 40%;
+    width: 45%;
     height: 200px;
-    margin: 2% 5%;
+    margin: 6% 2% 2% 0;
     float: left;
   }
 
@@ -94,8 +107,7 @@ nav {
   #build-outfit {
     width: 30%;
     float: left;
-    height: 600px;
-    border: 2px solid red;
+    height: 650px;
     // overflow: scroll;
     & img {
       width:100%;
@@ -114,7 +126,7 @@ nav {
     & .outfit {
       width: 30%;
       margin: 1% 1%;
-      height: 700px;
+      height: 520px;
       float: left;
       & img {
         width:50%;

@@ -19,6 +19,10 @@ body{
   background-color: $background-color;
 }
 
+// header {
+//   background-color: $plain-black;
+// }
+
 h1 {
   color: $salmon;
 }
@@ -63,8 +67,12 @@ nav {
     }
   }
 
+#build-outfit, #show-all {
+  border: 7px solid $plain-black;
+}
+
   #display-outfits {
-    border: 3px solid blue;
+    border: 7px solid $plain-black;
     & .outfit {
       border: 2px solid $pale-purple;
       & .delete-outfit-button {

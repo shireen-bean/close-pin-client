@@ -1,6 +1,6 @@
 'use strict';
 
-// const clothingApi = require('./clothing_api');
+const clothingApi = require('./clothing_api');
 
 
 const failure = (error) => {
@@ -68,6 +68,15 @@ const onSelectShoes = function(event) {
   $('#outfit-shoes').html("<img src='"+image_url+"'>");
 };
 
+// const onDeleteTop = function(event) {
+//   event.preventDefault();
+//   let id = $(this).val();
+//   console.log('will delete this shirt id'+id);
+//   clothingApi.deleteTop(id)
+//   .done(function(){console.log('successfully delted shirt')})
+//   .fail(failure);
+// }
+
 const showAllTopsSuccess = function(data) {
   $('#show-all').html('');
   let shirtsArray = data.profile.shirts;
@@ -75,7 +84,9 @@ const showAllTopsSuccess = function(data) {
   for (let i=0;i<shirtsArray.length;i++){
     if (shirtsArray[i].image !== null){
     $("#show-all").append("<button id='shirt"+shirtsArray[i].id+"' class='shirt-image' data-shirt-index='"+i+"' value='"+shirtsArray[i].id+"'><img src='"+shirtsArray[i].image+"' alt='"+shirtsArray[i].name+"'></button>");
+    // $("#shirt"+shirtsArray[i].id).append("<button class='delete-shirt' id='delete-shirt"+shirtsArray[i].id+"' value='"+shirtsArray[i].id+"'>Delete</button>");
     $("#shirt"+shirtsArray[i].id).on('click', onSelectTop)
+    // $('#delete-shirt'+shirtsArray[i].id).on('click', onDeleteTop)
   }
 }
 };
@@ -119,7 +130,7 @@ const showAllShoesSuccess = function(data) {
 const newOutfitSuccess = function(data) {
   console.log(data);
   console.log('new outfit saved!');
-  $('#new-outfit legend').text('Outfit Saved!')
+  $('#new-outfit h2').text('Outfit Saved!')
 };
 
 module.exports = {
