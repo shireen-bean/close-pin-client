@@ -67,15 +67,45 @@ const newOutfit = function(data) {
   });
 };
 
-// const deleteTop = function(shirt_id) {
-//   return $.ajax({
-//     url: app.host + '/shirts/'+shirt_id,
-//     method: "DELETE",
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//   });
-// };
+const deleteTop = function(shirt_id) {
+  return $.ajax({
+    url: app.host + '/shirts/'+shirt_id,
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+const deleteBottom = function(bottom_id) {
+  return $.ajax({
+    url: app.host + '/bottoms/'+bottom_id,
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+const deleteAccessory = function(accessory_id) {
+  return $.ajax({
+    url: app.host + '/accessories/'+accessory_id,
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+const deleteShoe = function(shoe_id) {
+  return $.ajax({
+    url: app.host + '/shoes/'+shoe_id,
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
 
 
 
@@ -86,5 +116,8 @@ module.exports = {
   createShoes,
   getAll,
   newOutfit,
-  // deleteTop,
+  deleteTop,
+  deleteBottom,
+  deleteAccessory,
+  deleteShoe,
 };

@@ -153,3 +153,20 @@ header {
     margin-left: auto;
     margin-right: auto;
   }
+
+#display-media {
+  height:700px;
+  & .ad {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 30%;
+    & img {
+      height: 100%;
+    }
+  }
+}
+
+  .ad {
+    height: 200px
+  }
