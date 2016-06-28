@@ -116,10 +116,10 @@ const showAllShoesSuccess = function(data) {
 }
 };
 
-
 const newOutfitSuccess = function(data) {
   console.log(data);
   console.log('new outfit saved!');
+  $('#new-outfit legend').text('Outfit Saved!')
 };
 
 module.exports = {

@@ -11,6 +11,7 @@ const onBrowse = function(event) {
   $('#welcome-page').hide();
   $('#display-outfits').hide();
   $('#browse-all').show();
+  $('#new-outfit legend').text('Build an Outfit!')
 };
 
 const onAddNew = function(event) {

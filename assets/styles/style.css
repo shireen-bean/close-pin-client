@@ -5,6 +5,10 @@
      box-sizing: border-box; /* IE */
 }
 
+.hidden {
+  display: none;
+}
+
 #side-tabs ul {
   list-style-type: none;
 }
