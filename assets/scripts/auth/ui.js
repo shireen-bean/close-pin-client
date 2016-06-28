@@ -32,6 +32,7 @@ const signInSuccess = (data) => {
   $('#sign-in-button').hide();
   $('nav').show();
   $('#user-dropdown').show();
+  $('#content').css('height','700px');
   api.getCurrentProfile(data.user.id)
   .done(setCurrentProfile)
   .fail(failure);
@@ -90,7 +91,7 @@ const signOutSuccess = () => {
   $('#welcome-page').show();
   $('#sign-up-button').show();
   $('#sign-in-button').show();
-
+  $('#content').css('height','920px');
 };
 
 module.exports = {
