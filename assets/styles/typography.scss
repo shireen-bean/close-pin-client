@@ -146,3 +146,10 @@ header {
       height: 200px
     }
   }
+
+  #sign-up input, #change-password input, #update-profile input, #sign-in input {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
