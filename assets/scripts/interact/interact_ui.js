@@ -97,10 +97,24 @@ const getOutfitArray = function(data) {
 const getMediaSuccess = function(data) {
   console.log('media retrieved');
   console.log(data);
+};
+
+const getTempSuccess = function(data) {
+  console.log('get temp success');
+  console.log(data.list[0]);
+  console.log(data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[2]);
+  for (let i=0;i<=29;i+=4) {
+    let date = data.list[i].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[i].dt_txt.split(" ")[0].split("-")[2];
+    $('#display-weather').append("<div class='weather-day' id='weather"+i+"'></div>")
+      $('#weather'+i).append("<div class='weather-date'><p>"+date+"</p></div>")
+    $('#weather'+i).append("<div class='weather-description'><p>Forecast:"+data.list[i].weather[0].description+"</p></div>")
+    // console.log(data.list[i].weather[0].description)
+  }
 }
 
 module.exports = {
   failure,
   getOutfitArray,
   getMediaSuccess,
+  getTempSuccess,
 };

@@ -68,9 +68,27 @@ const deleteOutfit = function(outfit_id) {
 //     method: 'GET',
 //     data: 'q=%23fashion',
 //     headers: {
-//       Authorization: '{"OAuth oauth_consumer_key="+"C5lzONPgJ2AqMbEBCPLmuMjrU", "oauth_nonce="+"e578bbc956c4bd617ad54553484b4e5f", "oauth_signature="+"tXBW%2B2t%2FG5493d2LP4rLax2NhLU%3D", "oauth_signature_method="+"HMAC-SHA1", "oauth_timestamp="+"1467114372", "oauth_version="+"1.0"}',
+//       Authorization: "oauth_consumer_key="+"C5lzONPgJ2AqMbEBCPLmuMjrU",
+//     },
 //   });
-//   };
+// };
+
+const getTemp = function(city,state){
+  let weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?q=";
+  let apiKey = "a08bb8613e20e49e7455d794444cc6f1";
+  return $.ajax({
+  url: weatherUrl + city + ',' + state + '&appid=' + apiKey,
+  //TellYQLwhatwewantandthatwewantJSON
+
+  // //Workwiththeresponse
+  // success:function(response){
+  // console.log(response);//serverresponse
+  //
+  // document.getElementById('location').innerHTML = city +", "+state;
+  // document.getElementById('locationTemp').innerHTML = response.main.temp;
+});
+}
+
 
 module.exports = {
   getProfile,
@@ -79,6 +97,8 @@ module.exports = {
   getAccessory,
   getShoe,
   deleteOutfit,
+  // getMedia,
+  getTemp,
 };
 
 // 'oauth_timestamp='+'1467114372', 'oauth_version='+'1.0',
