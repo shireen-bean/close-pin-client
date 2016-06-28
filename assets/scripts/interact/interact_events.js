@@ -55,7 +55,18 @@ const onPins = function(event) {
   interactApi.getProfile(profile_id)
   .done(interactUi.getOutfitArray)
   .fail(interactUi.failure);
-}
+};
+
+const onMedia = function(event) {
+  console.log('pins clicked');
+  $('#welcome-page').hide();
+  $('#browse-all').hide();
+  $('#display-outfits').hide();
+  $('#display-media').show();
+  interactApi.getMedia()
+  .done(interactUi.getMediaSuccess)
+  .fail(interactUi.failure);
+};
 
 
 const addHandlers = () => {
@@ -71,6 +82,7 @@ const addHandlers = () => {
 
 
   $('#pins').on('click',onPins);
+  $('#media').on('click',onMedia);
 };
 
 
