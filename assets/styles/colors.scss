@@ -77,3 +77,10 @@ nav {
       }
     }
   }
+
+
+#display-weather {
+  & .weather-day {
+    border: 2px solid blue;
+  }
+}

@@ -793,6 +793,7 @@ webpackJsonp([0],[
 	  $('#welcome-page').hide();
 	  $('#display-outfits').hide();
 	  $('#browse-all').show();
+	  $('#display-media').hide();
 	  $('#new-outfit legend').text('Build an Outfit!');
 	};
 
@@ -833,6 +834,7 @@ webpackJsonp([0],[
 	  $('#welcome-page').hide();
 	  $('#browse-all').hide();
 	  $('#display-outfits').show();
+	  $('#display-media').hide();
 	  var profile_id = $('.current-profile').val();
 	  interactApi.getProfile(profile_id).done(interactUi.getOutfitArray).fail(interactUi.failure);
 	};
@@ -849,6 +851,7 @@ webpackJsonp([0],[
 	var addHandlers = function addHandlers() {
 	  $('#browse-all').hide();
 	  $('#display-outfits').hide();
+	  $('#display-media').hide();
 	  $('nav').hide();
 	  $('#browse').on('click', onBrowse);
 	  $('#add-new').on('click', onAddNew);

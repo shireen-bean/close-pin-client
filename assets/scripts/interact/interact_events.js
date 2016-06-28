@@ -12,6 +12,7 @@ const onBrowse = function(event) {
   $('#display-outfits').hide();
   $('#browse-all').show();
   $('#display-media').hide();
+  $('#display-weather').hide();
   $('#new-outfit legend').text('Build an Outfit!')
 };
 
@@ -48,9 +49,11 @@ const onCreateShoesChosen = function(event) {
 };
 
 const onPins = function(event) {
+  event.preventDefault();
   console.log('pins clicked');
   $('#welcome-page').hide();
   $('#browse-all').hide();
+  $('#display-weather').hide();
   $('#display-outfits').show();
   $('#display-media').hide();
   let profile_id = $('.current-profile').val();
@@ -60,21 +63,37 @@ const onPins = function(event) {
 };
 
 const onMedia = function(event) {
+  event.preventDefault();
   console.log('pins clicked');
   $('#welcome-page').hide();
   $('#browse-all').hide();
   $('#display-outfits').hide();
+  $('#display-weather').hide();
   $('#display-media').show();
-  interactApi.getMedia()
-  .done(interactUi.getMediaSuccess)
-  .fail(interactUi.failure);
+  // interactApi.getMedia()
+  // .done(interactUi.getMediaSuccess)
+  // .fail(interactUi.failure);
 };
+
+const onWeek = function(event) {
+  event.preventDefault();
+  console.log('week clicked');
+  $('#welcome-page').hide();
+  $('#browse-all').hide();
+  $('#display-outfits').hide();
+  $('#display-media').hide();
+  $('#display-weather').show();
+  interactApi.getTemp("Boston","MA")
+  .done(interactUi.getTempSuccess)
+  .fail(interactUi.failure);
+}
 
 
 const addHandlers = () => {
   $('#browse-all').hide();
   $('#display-outfits').hide();
   $('#display-media').hide();
+  $('#display-weather').hide();
   $('nav').hide();
   $('#browse').on('click', onBrowse);
   $('#add-new').on('click', onAddNew);
@@ -86,6 +105,7 @@ const addHandlers = () => {
 
   $('#pins').on('click',onPins);
   $('#media').on('click',onMedia);
+  $('#week').on('click',onWeek);
 };
 
 

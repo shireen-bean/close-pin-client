@@ -100,3 +100,12 @@ nav {
       }
     }
   }
+
+  #display-weather {
+    height: 700px;
+    overflow: scroll;
+    & .weather-day {
+      text-align: center;
+      height: 200px
+    }
+  }
