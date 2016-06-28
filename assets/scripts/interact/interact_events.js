@@ -11,6 +11,7 @@ const onBrowse = function(event) {
   $('#welcome-page').hide();
   $('#display-outfits').hide();
   $('#browse-all').show();
+  $('#display-media').hide();
   $('#new-outfit legend').text('Build an Outfit!')
 };
 
@@ -51,6 +52,7 @@ const onPins = function(event) {
   $('#welcome-page').hide();
   $('#browse-all').hide();
   $('#display-outfits').show();
+  $('#display-media').hide();
   let profile_id = $('.current-profile').val();
   interactApi.getProfile(profile_id)
   .done(interactUi.getOutfitArray)
@@ -72,6 +74,7 @@ const onMedia = function(event) {
 const addHandlers = () => {
   $('#browse-all').hide();
   $('#display-outfits').hide();
+  $('#display-media').hide();
   $('nav').hide();
   $('#browse').on('click', onBrowse);
   $('#add-new').on('click', onAddNew);
