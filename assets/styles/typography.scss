@@ -156,9 +156,10 @@ header {
       & img {
         width:50%;
       }
-      & .like-outfit-button {
+      & .like-outfit-button, .dislike-outfit-button {
+        width:50%;
         text-align: right;
-        display: block;
+        display: inline;
       }
     }
   }

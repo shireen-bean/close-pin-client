@@ -1117,6 +1117,7 @@ webpackJsonp([0],[
 
 	var getOutfitArray = function getOutfitArray(data) {
 	  $('#display-outfits').html('');
+	  $('#display-outfits').append('<h1>Clothes Pin</h1>');
 	  var outfitArray = data.profile.outfits;
 	  console.log(outfitArray);
 	  if (outfitArray.length == 0) {
@@ -1174,6 +1175,7 @@ webpackJsonp([0],[
 	  console.log('get all outfits success');
 	  console.log(data);
 	  $('#display-feed').html('');
+	  $('#display-feed').append('<h1>Clothes Pin</h1>');
 	  var outfitArray = data.outfits;
 	  console.log(outfitArray);
 	  if (outfitArray.length == 0) {
