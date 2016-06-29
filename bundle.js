@@ -1064,13 +1064,15 @@ webpackJsonp([0],[
 	};
 
 	var getTemp = function getTemp(city, state) {
-	  var weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?q=";
+	  var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=';
 	  var apiKey = "a08bb8613e20e49e7455d794444cc6f1";
 	  return $.ajax({
 	    url: weatherUrl + city + ',' + state + '&APPID=' + apiKey
 
 	  });
 	};
+
+	// http://api.openweathermap.org/data/2.5/forecast?q=
 
 	var getAllOutfits = function getAllOutfits() {
 	  return $.ajax({
@@ -1269,15 +1271,16 @@ webpackJsonp([0],[
 
 	var getTempSuccess = function getTempSuccess(data) {
 	  console.log('get temp success');
-	  console.log(data.list[0]);
-	  console.log(data.list[0].dt_txt.split(" ")[0].split("-")[1] + "/" + data.list[0].dt_txt.split(" ")[0].split("-")[2]);
-	  for (var i = 0; i <= 29; i += 4) {
-	    var date = data.list[i].dt_txt.split(" ")[0].split("-")[1] + "/" + data.list[i].dt_txt.split(" ")[0].split("-")[2];
-	    $('#display-weather').append("<div class='weather-day' id='weather" + i + "'></div>");
-	    $('#weather' + i).append("<div class='weather-date'><p>" + date + "</p></div>");
-	    $('#weather' + i).append("<div class='weather-description'><p>Forecast:" + data.list[i].weather[0].description + "</p></div>");
-	    // console.log(data.list[i].weather[0].description)
-	  }
+	  console.log(data);
+	  // console.log(data.list[0]);
+	  // console.log(data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[2]);
+	  // for (let i=0;i<=29;i+=4) {
+	  //   let date = data.list[i].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[i].dt_txt.split(" ")[0].split("-")[2];
+	  //   $('#display-weather').append("<div class='weather-day' id='weather"+i+"'></div>")
+	  //     $('#weather'+i).append("<div class='weather-date'><p>"+date+"</p></div>")
+	  //   $('#weather'+i).append("<div class='weather-description'><p>Forecast:"+data.list[i].weather[0].description+"</p></div>")
+	  //   // console.log(data.list[i].weather[0].description)
+	  // }
 	};
 
 	module.exports = {
