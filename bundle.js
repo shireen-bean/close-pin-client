@@ -349,7 +349,9 @@ webpackJsonp([0],[
 	  console.log('User signed out successfully');
 	  app.user = null;
 	  $('#browse-all').hide();
-	  $('#user-dropdown').hide();
+	  $('#display-outfits').hide();
+	  $('#display-feed').hide();
+	  $('#display-weather').hide();
 	  $('nav').hide();
 	  $('#welcome-page').show();
 	  $('#sign-up-button').show();
