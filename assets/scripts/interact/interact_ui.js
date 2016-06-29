@@ -157,15 +157,16 @@ const getAllOutfitsArray = function(data){
 
 const getTempSuccess = function(data) {
   console.log('get temp success');
-  console.log(data.list[0]);
-  console.log(data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[2]);
-  for (let i=0;i<=29;i+=4) {
-    let date = data.list[i].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[i].dt_txt.split(" ")[0].split("-")[2];
-    $('#display-weather').append("<div class='weather-day' id='weather"+i+"'></div>")
-      $('#weather'+i).append("<div class='weather-date'><p>"+date+"</p></div>")
-    $('#weather'+i).append("<div class='weather-description'><p>Forecast:"+data.list[i].weather[0].description+"</p></div>")
-    // console.log(data.list[i].weather[0].description)
-  }
+  console.log(data);
+  // console.log(data.list[0]);
+  // console.log(data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[2]);
+  // for (let i=0;i<=29;i+=4) {
+  //   let date = data.list[i].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[i].dt_txt.split(" ")[0].split("-")[2];
+  //   $('#display-weather').append("<div class='weather-day' id='weather"+i+"'></div>")
+  //     $('#weather'+i).append("<div class='weather-date'><p>"+date+"</p></div>")
+  //   $('#weather'+i).append("<div class='weather-description'><p>Forecast:"+data.list[i].weather[0].description+"</p></div>")
+  //   // console.log(data.list[i].weather[0].description)
+  // }
 };
 
 module.exports = {

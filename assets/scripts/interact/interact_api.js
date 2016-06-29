@@ -64,13 +64,15 @@ const deleteOutfit = function(outfit_id) {
 };
 
 const getTemp = function(city,state){
-  let weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?q=";
+  let weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=';
   let apiKey = "a08bb8613e20e49e7455d794444cc6f1";
   return $.ajax({
   url: weatherUrl + city + ',' + state + '&APPID=' + apiKey,
 
 });
 };
+
+// http://api.openweathermap.org/data/2.5/forecast?q=
 
 const getAllOutfits = function(){
   return $.ajax({
