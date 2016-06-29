@@ -20,6 +20,7 @@ const onDeleteOutfit = function(event){
 
 const getOutfitArray = function(data) {
   $('#display-outfits').html('');
+  $('#display-outfits').append('<h1>Clothes Pin</h1>');
   let outfitArray = data.profile.outfits;
   console.log(outfitArray);
   if (outfitArray.length == 0) {
@@ -82,6 +83,7 @@ const getAllOutfitsArray = function(data){
   console.log('get all outfits success');
   console.log(data);
   $('#display-feed').html('');
+  $('#display-feed').append('<h1>Clothes Pin</h1>');
   let outfitArray = data.outfits;
   console.log(outfitArray);
   if (outfitArray.length == 0) {
