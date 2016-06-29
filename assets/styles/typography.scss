@@ -145,6 +145,24 @@ header {
     }
   }
 
+  #display-feed {
+    height: 800px;
+    overflow: scroll;
+    & .outfit {
+      width: 30%;
+      margin: 1% 1%;
+      height: 600px;
+      float: left;
+      & img {
+        width:50%;
+      }
+      & .like-outfit-button {
+        text-align: right;
+        display: block;
+      }
+    }
+  }
+
   #display-weather {
     height: 700px;
     overflow: scroll;

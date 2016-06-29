@@ -95,6 +95,21 @@ nav {
     }
   }
 
+  #display-feed {
+    border: 7px solid $plain-black;
+    & .outfit {
+      border: 2px solid $pale-purple;
+      & .like-outfit-button {
+        background-color: transparentize($plain-black, 1);
+        text-shadow: none !important;
+        border:none !important;
+        box-shadow:none !important;
+        background-color: $blue-grey;
+        color:$plain-white;
+      }
+    }
+  }
+
 
 #display-weather {
   & .weather-day {

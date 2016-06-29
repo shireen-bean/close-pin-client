@@ -6,33 +6,9 @@ const failure = (error) => {
   console.error(error);
 };
 
-// const displayShirt = function(data) {
-//   let image = data.shirt.image;
-//   console.log(image);
-//   $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
-// };
-//
-// const displayBottom = function(data) {
-//   let image = data.bottom.image;
-//   console.log(image);
-//   $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
-// };
-//
-// const displayAccessory = function(data) {
-//   let image = data.accessory.image;
-//   console.log(image);
-//   $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
-// };
-//
-// const displayShoe = function(data) {
-//   let image = data.shoe.image;
-//   console.log(image);
-//   $('#display-outfits .outfit:last-child').append("<img src='"+image+"'>")
-// };
-
 const deleteOutfitSuccess = function(){
   console.log('outfit deleted');
-}
+};
 
 const onDeleteOutfit = function(event){
   event.preventDefault();
@@ -94,10 +70,64 @@ const getOutfitArray = function(data) {
 }
 };
 
-const getMediaSuccess = function(data) {
-  console.log('media retrieved');
-  console.log(data);
+const onLikeOutfit = function(event){
+  event.preventDefault();
+  console.log('liked');
+  let item = $(this)
+  item.parent().css('border','5px solid red')
+  console.log(item);
 };
+
+const getAllOutfitsArray = function(data){
+  console.log('get all outfits success');
+  console.log(data);
+  $('#display-feed').html('');
+  let outfitArray = data.outfits;
+  console.log(outfitArray);
+  if (outfitArray.length == 0) {
+    $('#display-feed').html('<h4> Be the first to post an outfit! </h4>');
+  } else {
+  for (let i=0;i<outfitArray.length;i++){
+    $('#display-feed').append("<div class='outfit' id='all-outfit"+outfitArray[i].id+"'></div>");
+    $("#all-outfit"+outfitArray[i].id).append("<button class='like-outfit-button' id='like-outfit"+outfitArray[i].id+"' value='"+outfitArray[i].id+"'>Like</button>");
+    $("#like-outfit"+outfitArray[i].id).on('click',onLikeOutfit);
+    // $("#all-outfit"+outfitArray[i].id).append("<button class='delete-outfit-button' id='delete-outfit"+outfitArray[i].id+"' value='"+outfitArray[i].id+"'>Delete</button>");
+    // $("#delete-outfit"+outfitArray[i].id).on('click',onDeleteOutfit);
+    let shirt_id = outfitArray[i].shirt_id;
+    interactApi.getShirt(shirt_id)
+    .done(
+      function(data) {
+        let image = data.shirt.image;
+        console.log(image);
+        $("#all-outfit"+outfitArray[i].id).append("<img src='"+image+"'>")
+      })
+    .fail(failure);
+    let bottom_id = outfitArray[i].bottom_id;
+    interactApi.getBottom(bottom_id)
+    .done(function(data) {
+      let image = data.bottom.image;
+      console.log(image);
+      $("#all-outfit"+outfitArray[i].id).append("<img src='"+image+"'>")
+    })
+    .fail(failure);
+    let accessory_id = outfitArray[i].accessory_id;
+    interactApi.getAccessory(accessory_id)
+    .done(function(data) {
+      let image = data.accessory.image;
+      $("#all-outfit"+outfitArray[i].id).append("<img src='"+image+"'>")
+    })
+    .fail(failure);
+    let shoe_id = outfitArray[i].shoe_id;
+    interactApi.getShoe(shoe_id)
+    .done(function(data) {
+      let image = data.shoe.image;
+      console.log(image);
+      $("#all-outfit"+outfitArray[i].id).append("<img src='"+image+"'>")
+    })
+    .fail(failure);
+  }
+  }
+  };
 
 const getTempSuccess = function(data) {
   console.log('get temp success');
@@ -110,11 +140,11 @@ const getTempSuccess = function(data) {
     $('#weather'+i).append("<div class='weather-description'><p>Forecast:"+data.list[i].weather[0].description+"</p></div>")
     // console.log(data.list[i].weather[0].description)
   }
-}
+};
 
 module.exports = {
   failure,
   getOutfitArray,
-  getMediaSuccess,
   getTempSuccess,
+  getAllOutfitsArray,
 };

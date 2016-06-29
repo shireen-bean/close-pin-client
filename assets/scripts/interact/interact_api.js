@@ -1,3 +1,4 @@
+'use strict';
 const app = require('../app.js');
 
 
@@ -62,32 +63,21 @@ const deleteOutfit = function(outfit_id) {
   });
 };
 
-// const getMedia = function() {
-//   return $.ajax({
-//     url: 'https://api.twitter.com/1.1/search/tweets.json',
-//     method: 'GET',
-//     data: 'q=%23fashion',
-//     headers: {
-//       Authorization: "oauth_consumer_key="+"C5lzONPgJ2AqMbEBCPLmuMjrU",
-//     },
-//   });
-// };
-
 const getTemp = function(city,state){
   let weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?q=";
   let apiKey = "a08bb8613e20e49e7455d794444cc6f1";
   return $.ajax({
   url: weatherUrl + city + ',' + state + '&appid=' + apiKey,
-  //TellYQLwhatwewantandthatwewantJSON
 
-  // //Workwiththeresponse
-  // success:function(response){
-  // console.log(response);//serverresponse
-  //
-  // document.getElementById('location').innerHTML = city +", "+state;
-  // document.getElementById('locationTemp').innerHTML = response.main.temp;
 });
-}
+};
+
+const getAllOutfits = function(){
+  return $.ajax({
+    url: app.host + '/outfits',
+    method: 'GET',
+  });
+  };
 
 
 module.exports = {
@@ -99,6 +89,7 @@ module.exports = {
   deleteOutfit,
   // getMedia,
   getTemp,
+  getAllOutfits,
 };
 
 // 'oauth_timestamp='+'1467114372', 'oauth_version='+'1.0',

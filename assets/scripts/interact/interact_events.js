@@ -11,7 +11,7 @@ const onBrowse = function(event) {
   $('#welcome-page').hide();
   $('#display-outfits').hide();
   $('#browse-all').show();
-  $('#display-media').hide();
+  $('#display-feed').hide();
   $('#display-weather').hide();
   $('#new-outfit legend').text('Build an Outfit!')
 };
@@ -55,24 +55,24 @@ const onPins = function(event) {
   $('#browse-all').hide();
   $('#display-weather').hide();
   $('#display-outfits').show();
-  $('#display-media').hide();
+  $('#display-feed').hide();
   let profile_id = $('.current-profile').val();
   interactApi.getProfile(profile_id)
   .done(interactUi.getOutfitArray)
   .fail(interactUi.failure);
 };
 
-const onMedia = function(event) {
+const onFeed = function(event) {
   event.preventDefault();
-  console.log('pins clicked');
+  console.log('feed clicked');
   $('#welcome-page').hide();
   $('#browse-all').hide();
   $('#display-outfits').hide();
   $('#display-weather').hide();
-  $('#display-media').show();
-  // interactApi.getMedia()
-  // .done(interactUi.getMediaSuccess)
-  // .fail(interactUi.failure);
+  $('#display-feed').show();
+  interactApi.getAllOutfits()
+  .done(interactUi.getAllOutfitsArray)
+  .fail(interactUi.failure);
 };
 
 const onWeek = function(event) {
@@ -81,7 +81,7 @@ const onWeek = function(event) {
   $('#welcome-page').hide();
   $('#browse-all').hide();
   $('#display-outfits').hide();
-  $('#display-media').hide();
+  $('#display-feed').hide();
   $('#display-weather').show();
   interactApi.getTemp("Boston","MA")
   .done(interactUi.getTempSuccess)
@@ -92,7 +92,7 @@ const onWeek = function(event) {
 const addHandlers = () => {
   $('#browse-all').hide();
   $('#display-outfits').hide();
-  $('#display-media').hide();
+  $('#display-feed').hide();
   $('#display-weather').hide();
   $('nav').hide();
   $('#browse').on('click', onBrowse);
@@ -104,7 +104,7 @@ const addHandlers = () => {
 
 
   $('#pins').on('click',onPins);
-  $('#media').on('click',onMedia);
+  $('#feed').on('click',onFeed);
   $('#week').on('click',onWeek);
 };
 
