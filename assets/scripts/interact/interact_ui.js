@@ -75,8 +75,22 @@ const onLikeOutfit = function(event){
   event.preventDefault();
   console.log('liked');
   let item = $(this)
-  item.parent().css('border','5px solid red')
-  console.log(item);
+  let id=$(this).val()
+  // item.parent().css('opacity','1')
+  interactApi.likeOutfit(id)
+  .done(function(data){item.parent().css('opacity','1');item.parent().css('border','5px solid #BF5FFF'); console.log(data)})
+  .fail(failure)
+};
+
+const onDislikeOutfit = function(event){
+  event.preventDefault();
+  console.log('disliked');
+  let item = $(this)
+  let id=$(this).val()
+  // item.parent().css('border','5px solid red')
+  interactApi.dislikeOutfit(id)
+  .done(function(data){item.parent().css('opacity','0.5'); item.parent().css('border','2px solid #D8BFD8'); console.log(data)})
+  .fail(failure)
 };
 
 const getAllOutfitsArray = function(data){
@@ -91,8 +105,10 @@ const getAllOutfitsArray = function(data){
   } else {
   for (let i=0;i<outfitArray.length;i++){
     $('#display-feed').append("<div class='outfit' id='all-outfit"+outfitArray[i].id+"'></div>");
-    $("#all-outfit"+outfitArray[i].id).append("<button class='like-outfit-button' id='like-outfit"+outfitArray[i].id+"' value='"+outfitArray[i].id+"'>Like</button>");
+    $("#all-outfit"+outfitArray[i].id).append("<button class='like-outfit-button' id='like-outfit"+outfitArray[i].id+"' value='"+outfitArray[i].id+"'>Love!</button>");
     $("#like-outfit"+outfitArray[i].id).on('click',onLikeOutfit);
+    $("#all-outfit"+outfitArray[i].id).append("<button class='dislike-outfit-button' id='dislike-outfit"+outfitArray[i].id+"' value='"+outfitArray[i].id+"'>Hate!</button>");
+    $("#dislike-outfit"+outfitArray[i].id).on('click',onDislikeOutfit);
     // $("#all-outfit"+outfitArray[i].id).append("<button class='delete-outfit-button' id='delete-outfit"+outfitArray[i].id+"' value='"+outfitArray[i].id+"'>Delete</button>");
     // $("#delete-outfit"+outfitArray[i].id).on('click',onDeleteOutfit);
     let shirt_id = outfitArray[i].shirt_id;
@@ -127,6 +143,14 @@ const getAllOutfitsArray = function(data){
       $("#all-outfit"+outfitArray[i].id).append("<img src='"+image+"'>")
     })
     .fail(failure);
+    let isLiked = outfitArray[i].description;
+    if (isLiked == 'liked') {
+      $("#all-outfit"+outfitArray[i].id).css('border', '5px solid #BF5FFF')
+      $("#all-outfit"+outfitArray[i].id).css('opacity', '1')
+    } else if (isLiked == 'disliked') {
+      $("#all-outfit"+outfitArray[i].id).css('opacity', '0.5')
+      $("#all-outfit"+outfitArray[i].id).css('border','2px solid #D8BFD8')
+    }
   }
   }
   };

@@ -79,6 +79,27 @@ const getAllOutfits = function(){
   });
   };
 
+const likeOutfit = function(id){
+  return $.ajax({
+    url: app.host + '/outfits/'+id,
+    method: "PATCH",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: {outfit: {'description': 'liked' }},
+  });
+};
+
+const dislikeOutfit = function(id){
+  return $.ajax({
+    url: app.host + '/outfits/'+id,
+    method: "PATCH",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: {outfit: {'description': 'disliked' }},
+  });
+};
 
 module.exports = {
   getProfile,
@@ -90,6 +111,8 @@ module.exports = {
   // getMedia,
   getTemp,
   getAllOutfits,
+  likeOutfit,
+  dislikeOutfit,
 };
 
 // 'oauth_timestamp='+'1467114372', 'oauth_version='+'1.0',
