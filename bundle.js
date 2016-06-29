@@ -1066,7 +1066,7 @@ webpackJsonp([0],[
 	  var weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?q=";
 	  var apiKey = "a08bb8613e20e49e7455d794444cc6f1";
 	  return $.ajax({
-	    url: weatherUrl + city + ',' + state + '&appid=' + apiKey
+	    url: weatherUrl + city + ',' + state + '&APPID=' + apiKey
 
 	  });
 	};

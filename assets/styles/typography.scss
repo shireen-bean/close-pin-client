@@ -202,3 +202,10 @@ header {
   position:relative;
   left:30%;
 }
+
+#weather-modal {
+  text-align: center;
+  & img{position:relative;
+  left: 0%;
+}
+}
