@@ -1194,7 +1194,7 @@ webpackJsonp([0],[
 	  var id = $(this).val();
 	  // item.parent().css('opacity','1')
 	  interactApi.likeOutfit(id).done(function (data) {
-	    item.parent().css('opacity', '1');item.parent().css('border', '5px solid #BF5FFF');console.log(data);
+	    item.parent().css('opacity', '1');item.parent().css('border', '5px solid #FA8072');console.log(data);
 	  }).fail(failure);
 	};
 
@@ -1252,7 +1252,7 @@ webpackJsonp([0],[
 	      }).fail(failure);
 	      var isLiked = outfitArray[i].description;
 	      if (isLiked == 'liked') {
-	        $("#all-outfit" + outfitArray[i].id).css('border', '5px solid #BF5FFF');
+	        $("#all-outfit" + outfitArray[i].id).css('border', '5px solid #FA8072');
 	        $("#all-outfit" + outfitArray[i].id).css('opacity', '1');
 	      } else if (isLiked == 'disliked') {
 	        $("#all-outfit" + outfitArray[i].id).css('opacity', '0.5');
