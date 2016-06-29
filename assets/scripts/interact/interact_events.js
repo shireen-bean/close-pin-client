@@ -83,6 +83,7 @@ const onWeek = function(event) {
   $('#display-outfits').hide();
   $('#display-feed').hide();
   $('#display-weather').show();
+  $('#weather-modal').modal('show');
   interactApi.getTemp("Boston","MA")
   .done(interactUi.getTempSuccess)
   .fail(interactUi.failure);
