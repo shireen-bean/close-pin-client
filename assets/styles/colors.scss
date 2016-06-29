@@ -19,16 +19,6 @@ body{
   background-color: $background-color;
 }
 
-// body {
-//   background-image: url('https://static.pexels.com/photos/26549/pexels-photo-26549.jpg');
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   opacity: 0.2;
-// }
-
-// header {
-//   background-color: $plain-black;
-// }
 
 h1 {
   color: $salmon;
@@ -47,7 +37,6 @@ nav {
 
 #welcome-page {
   background-image: url('https://static.pexels.com/photos/6805/fashion-men-vintage-colorful-large.jpg');
-  // opacity: 0.6;
   background-repeat: no-repeat;
   background-size: cover;
   & #sign-up-button, #sign-in-button {
@@ -120,6 +109,6 @@ nav {
 
 #display-weather {
   & .weather-day {
-    border: 2px solid blue;
+    border: 1px solid blue;
   }
 }
