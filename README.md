@@ -15,3 +15,33 @@ A user can create an outfit by clicking on the images and seeing it added to the
   outfit que which they may save
 A user can view all of their saved outfits and delete any unwanted outfits in PINS tab.
 A user can view all outfits posted by users in a FEED tab
+
+Under Construction:
+-Weeks tab will incorporate Third Party Weather Api that gives weather for the week and allows user to assign an outfit to a particular day of the week
+
+Wireframe:
+Homepage:
+  -greeted with two buttons: signIn, signUpSuccess
+On Log In:
+  -Remain on welcome-page
+  -signIn signUp buttons disappear
+  -user options show
+  -nav bar shows
+On Browse:
+  -side tab column
+  -area where can browse all articles of clothing
+  -delete clothing item button on each item
+  -area where can see outfit being build-outfit
+  -save outfit button on outfit area
+On Weekly:
+  -see under construction section
+On Pins:
+  -see all current user outfits
+  -delete button on each outfit
+On Feed:
+  -see all outfits of all users
+  -like button and hate button on each outfit 
+On Log Outfit
+  -welcome-page shows
+  -signIn signUp buttons reappear
+  -all other buttons and views disappear
